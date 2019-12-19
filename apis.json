@@ -1,0 +1,98 @@
+{
+    "name": "Delighted",
+    "description": "Delighted uses Net Promoter Score to gather real feedback from your customers \u2013 in minutes not weeks.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/19284-delighted.jpg",
+    "tags": [
+        "feedback",
+        "have api",
+        "surveys",
+        "webhook implementations"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/delighted\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Delighted",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/19284-delighted.jpg",
+            "humanURL": "https:\/\/delighted.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/delighted-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/delighted-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "https:\/\/delighted.com\/blog"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/delighted"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/delighted.com\/docs\/api"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@delighted.com"
+        },
+        {
+            "type": "Email",
+            "url": "legal@delighted.com"
+        },
+        {
+            "type": "Email",
+            "url": "hello@delighted.com"
+        },
+        {
+            "type": "Embeddable",
+            "url": "https:\/\/delighted.com\/docs\/api\/web"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/delighted"
+        },
+        {
+            "type": "Integrations",
+            "url": "https:\/\/delighted.com\/our-integrations"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/delighted.com\/pricing"
+        },
+        {
+            "type": "Privacy",
+            "url": "https:\/\/delighted.com\/privacy"
+        },
+        {
+            "type": "Security",
+            "url": "https:\/\/delighted.com\/security"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/delighted"
+        },
+        {
+            "type": "Webhooks",
+            "url": "https:\/\/delighted.com\/docs\/api\/webhooks"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/delighted.com"
+        }
+    ]
+}
