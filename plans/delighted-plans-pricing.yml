@@ -1,0 +1,213 @@
+name: Delighted Plans and Pricing
+description: >-
+  Pricing plans for the Delighted customer satisfaction and NPS survey platform.
+  Plans are structured around monthly survey responses and user seats, with all
+  plans including unlimited survey creation, branding customization, and access
+  to multiple survey types (NPS, CSAT, CES, eNPS, PMF, 5-star, Smileys, Thumbs).
+specificationVersion: '0.1'
+plans:
+  - name: Free
+    description: >-
+      Entry-level free plan for individuals exploring Delighted's NPS and
+      customer satisfaction survey capabilities. Includes 25 survey responses
+      per month and 1 user seat with access to core survey types and reporting.
+    url: https://delighted.com/pricing
+    price: 0.00
+    currency: USD
+    billingCycle: monthly
+    unit: month
+    features:
+      - name: Survey Responses
+        description: Up to 25 survey responses per month
+        quota: 25
+        unit: responses/month
+      - name: Users
+        description: 1 user seat
+        quota: 1
+        unit: users
+      - name: Survey Types
+        description: NPS, CSAT, CES, 5-star, Smileys, Thumbs, eNPS, PMF
+      - name: Unlimited Survey Creation
+        description: Create unlimited surveys across CX project types
+      - name: Survey Branding
+        description: Customize survey branding and question text
+      - name: Question Logic
+        description: Conditional logic and dynamic personalization
+      - name: Community Access
+        description: Access to Delighted Community for support
+
+  - name: Starter
+    description: >-
+      Starter plan for small teams beginning to systematically collect customer
+      feedback. Includes 50 monthly responses, 2 users, and integrations with
+      popular business tools.
+    url: https://delighted.com/pricing
+    price: 19.00
+    currency: USD
+    billingCycle: monthly
+    unit: month
+    features:
+      - name: Survey Responses
+        description: Up to 50 survey responses per month
+        quota: 50
+        unit: responses/month
+      - name: Users
+        description: 2 user seats
+        quota: 2
+        unit: users
+      - name: Survey Types
+        description: NPS, CSAT, CES, 5-star, Smileys, Thumbs, eNPS, PMF
+      - name: Unlimited Survey Creation
+        description: Create unlimited surveys across CX project types
+      - name: Integrations
+        description: 35+ free integrations including Slack, Shopify, Zendesk
+        quota: 35
+        unit: integrations
+      - name: Delivery Channels
+        description: Email, web embed, SDK, kiosk, and link delivery options
+      - name: Reports
+        description: 7 pre-built reports with AI-driven trend analysis
+        quota: 7
+        unit: reports
+      - name: Personalization
+        description: Dynamic personalization and conditional question logic
+
+  - name: Growth
+    description: >-
+      Growth plan for growing teams that need more responses and additional user
+      seats to manage customer feedback programs. Includes all Starter features
+      plus higher response and user limits.
+    url: https://delighted.com/pricing
+    price: 39.00
+    currency: USD
+    billingCycle: monthly
+    unit: month
+    features:
+      - name: Survey Responses
+        description: Up to 100 survey responses per month
+        quota: 100
+        unit: responses/month
+      - name: Users
+        description: 3 user seats
+        quota: 3
+        unit: users
+      - name: Survey Types
+        description: NPS, CSAT, CES, 5-star, Smileys, Thumbs, eNPS, PMF
+      - name: Unlimited Survey Creation
+        description: Create unlimited surveys across CX project types
+      - name: Integrations
+        description: 35+ free integrations including Slack, Shopify, Zendesk
+        quota: 35
+        unit: integrations
+      - name: Delivery Channels
+        description: Email, web embed, SDK, kiosk, and link delivery options
+      - name: Reports
+        description: 7 pre-built reports with AI-driven trend analysis
+        quota: 7
+        unit: reports
+      - name: Personalization
+        description: Dynamic personalization and conditional question logic
+
+  - name: Advanced
+    description: >-
+      Advanced plan for established customer experience programs that need
+      higher response volumes and larger teams. Includes all Growth features
+      with 250 responses and 5 users.
+    url: https://delighted.com/pricing
+    price: 149.00
+    currency: USD
+    billingCycle: monthly
+    unit: month
+    features:
+      - name: Survey Responses
+        description: Up to 250 survey responses per month
+        quota: 250
+        unit: responses/month
+      - name: Users
+        description: 5 user seats
+        quota: 5
+        unit: users
+      - name: Survey Types
+        description: NPS, CSAT, CES, 5-star, Smileys, Thumbs, eNPS, PMF
+      - name: Unlimited Survey Creation
+        description: Create unlimited surveys across CX project types
+      - name: Integrations
+        description: 35+ free integrations including Slack, Shopify, Zendesk
+        quota: 35
+        unit: integrations
+      - name: Delivery Channels
+        description: Email, web embed, SDK, kiosk, and link delivery options
+      - name: Reports
+        description: 7 pre-built reports with AI-driven trend analysis
+        quota: 7
+        unit: reports
+      - name: Personalization
+        description: Dynamic personalization and conditional question logic
+
+  - name: Premium
+    description: >-
+      Premium plan for enterprise customer experience teams requiring maximum
+      response volumes, larger user counts, premium integrations (Salesforce,
+      Segment, HubSpot), custom email domain, custom translation support, and
+      priority support.
+    url: https://delighted.com/pricing
+    price: 249.00
+    currency: USD
+    billingCycle: monthly
+    unit: month
+    features:
+      - name: Survey Responses
+        description: Up to 500 survey responses per month
+        quota: 500
+        unit: responses/month
+      - name: Users
+        description: 10 user seats
+        quota: 10
+        unit: users
+      - name: Survey Types
+        description: NPS, CSAT, CES, 5-star, Smileys, Thumbs, eNPS, PMF
+      - name: Unlimited Survey Creation
+        description: Create unlimited surveys across CX project types
+      - name: Free Integrations
+        description: 35+ free integrations including Slack, Shopify, Zendesk
+        quota: 35
+        unit: integrations
+      - name: Premium Integrations
+        description: 6 premium integrations including Salesforce, Segment, HubSpot
+        quota: 6
+        unit: integrations
+      - name: Delivery Channels
+        description: Email, web embed, SDK, kiosk, and link delivery options
+      - name: Reports
+        description: 7 pre-built reports with AI-driven trend analysis
+        quota: 7
+        unit: reports
+      - name: Personalization
+        description: Dynamic personalization and conditional question logic
+      - name: Custom Email Domain
+        description: Send surveys from your own email domain
+      - name: Custom Translation
+        description: Support for custom survey translations
+      - name: Priority Support
+        description: Priority customer support access
+
+  - name: Enterprise
+    description: >-
+      Custom enterprise plan for organizations requiring more than 500 monthly
+      responses or more than 10 users. Contact Delighted for custom pricing
+      tailored to volume and feature requirements.
+    url: https://delighted.com/pricing
+    price: 0.00
+    currency: USD
+    billingCycle: monthly
+    unit: month
+    customPricing: true
+    features:
+      - name: Custom Responses
+        description: Custom monthly response quota above 500
+      - name: Custom Users
+        description: Custom user seat count above 10
+      - name: All Premium Features
+        description: All features from the Premium tier included
+      - name: Dedicated Support
+        description: Dedicated account management and support

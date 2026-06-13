@@ -1,0 +1,129 @@
+name: Delighted FinOps
+description: >-
+  FinOps Framework FOCUS-aligned cost and usage guidance for the Delighted
+  customer satisfaction and NPS survey platform. Costs are primarily driven by
+  monthly survey response volume and user seat counts across plan tiers. The
+  key cost driver to monitor and optimize is response consumption relative to
+  plan limits.
+specificationVersion: '1.0'
+provider: Delighted
+providerURL: https://delighted.com/
+pricingURL: https://delighted.com/pricing
+currency: USD
+billingModel: subscription
+billingCycle: monthly
+
+costDrivers:
+  - name: Survey Responses
+    description: >-
+      The primary cost driver for Delighted. Each plan tier has a fixed monthly
+      cap on survey responses received. Exceeding the cap requires upgrading to
+      a higher tier. Unused response capacity does not roll over between months.
+    unit: responses/month
+    tiers:
+      - plan: Free
+        limit: 25
+        monthlyCost: 0.00
+      - plan: Starter
+        limit: 50
+        monthlyCost: 19.00
+      - plan: Growth
+        limit: 100
+        monthlyCost: 39.00
+      - plan: Advanced
+        limit: 250
+        monthlyCost: 149.00
+      - plan: Premium
+        limit: 500
+        monthlyCost: 249.00
+      - plan: Enterprise
+        limit: custom
+        monthlyCost: custom
+
+  - name: User Seats
+    description: >-
+      Each plan tier includes a fixed number of user seats. Adding more users
+      beyond the plan limit requires upgrading to a higher tier. User seat
+      limits scale with plan price.
+    unit: users
+    tiers:
+      - plan: Free
+        limit: 1
+      - plan: Starter
+        limit: 2
+      - plan: Growth
+        limit: 3
+      - plan: Advanced
+        limit: 5
+      - plan: Premium
+        limit: 10
+      - plan: Enterprise
+        limit: custom
+
+  - name: Premium Integrations
+    description: >-
+      Premium integrations (Salesforce, Segment, HubSpot, and others) are only
+      available on the Premium and Enterprise tiers. Organizations on lower tiers
+      that require these integrations must upgrade to Premium ($249/month).
+    unit: integrations
+    availability:
+      plans:
+        - Premium
+        - Enterprise
+      count: 6
+
+optimization:
+  - name: Monitor Response Consumption
+    description: >-
+      Track monthly response consumption via the Delighted API /v1/metrics.json
+      endpoint or dashboard to ensure you are not approaching plan limits
+      unexpectedly. Proactively upgrade before exceeding limits to avoid
+      service interruption.
+    action: monitor
+    endpoint: https://api.delighted.com/v1/metrics.json
+
+  - name: Right-size Plan to Response Volume
+    description: >-
+      Analyze historical monthly response volumes using the API metrics endpoint
+      with since/until timestamp filters. Select the lowest plan tier whose
+      response cap exceeds your typical monthly volume to minimize subscription
+      costs.
+    action: optimize
+
+  - name: Use Autopilot Efficiently
+    description: >-
+      Autopilot drip campaigns can generate responses continuously. Monitor
+      Autopilot membership via the API to ensure survey cadences align with
+      your response budget and do not unexpectedly exhaust monthly allocations.
+    action: govern
+
+  - name: Consolidate CX Projects
+    description: >-
+      Each CX project has its own API key and response allocation draws from
+      the shared account pool. Audit active CX projects periodically and
+      archive unused ones to avoid inadvertent response consumption.
+    action: optimize
+
+  - name: Evaluate Custom Enterprise Pricing
+    description: >-
+      For organizations consistently consuming above 500 responses per month
+      or requiring more than 10 users, contact Delighted for custom enterprise
+      pricing which may offer a lower effective cost-per-response than the
+      Premium tier.
+    action: evaluate
+    contactURL: https://delighted.com/pricing
+
+focus:
+  - dimension: SKU
+    description: Plan tier (Free, Starter, Growth, Advanced, Premium, Enterprise)
+  - dimension: UsageQuantity
+    description: Survey responses received per month
+  - dimension: UsageUnit
+    description: responses/month
+  - dimension: BilledCost
+    description: Fixed monthly subscription cost for selected plan tier
+  - dimension: EffectiveRate
+    description: >-
+      Calculated as BilledCost / UsageQuantity — effective cost per survey
+      response received. Lower tiers have higher effective cost-per-response
+      when response caps are reached.

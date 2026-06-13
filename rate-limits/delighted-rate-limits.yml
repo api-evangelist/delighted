@@ -1,0 +1,52 @@
+name: Delighted API Rate Limits
+description: >-
+  Rate limiting policies for the Delighted REST API. The API uses HTTP 429
+  status codes to signal rate limit exhaustion and provides a Retry-After header
+  indicating when the client may resume requests. Delighted recommends an
+  exponential backoff strategy starting with a one-second delay and doubling
+  incrementally on each subsequent retry.
+specificationVersion: '0.1'
+rateLimits:
+  - name: General API Rate Limit
+    description: >-
+      Delighted applies rate limits for extreme usage scenarios across all API
+      endpoints. When a 429 Too Many Requests response is received, clients
+      should inspect the Retry-After response header for the number of seconds
+      to wait before retrying. Delighted recommends exponential backoff starting
+      at 1 second and doubling on each retry attempt.
+    scope: account
+    headers:
+      - name: Retry-After
+        description: >-
+          Number of seconds the client should wait before retrying the request
+          after receiving a 429 response.
+    statusCodes:
+      - code: 429
+        description: >-
+          Too Many Requests. The client has exceeded the rate limit for this
+          API key. Use the Retry-After header value to determine when to retry.
+    strategy:
+      type: exponential-backoff
+      description: >-
+        Start with a 1-second delay after the first 429 response, then double
+        the delay on each subsequent retry (1s, 2s, 4s, 8s, etc.) until the
+        request succeeds or a maximum retry count is reached.
+      initialDelaySeconds: 1
+      multiplier: 2
+  - name: Webhook Retry Policy
+    description: >-
+      For webhook deliveries, Delighted automatically retries failed deliveries
+      (non-2xx responses) multiple times over several days. Webhook endpoints
+      should return HTTP 200-299 to acknowledge receipt. Retry attempts use
+      increasing intervals to allow recovery from transient failures.
+    scope: webhooks
+    retryPolicy:
+      description: >-
+        Webhook delivery failures trigger automatic retries over multiple days
+        with increasing intervals between attempts.
+      maxDuration: several days
+      successCodes:
+        - 200
+        - 201
+        - 202
+        - 204

@@ -1,0 +1,78 @@
+aid: delighted
+name: Delighted
+description: >-
+  Delighted is an NPS and customer satisfaction survey platform with a REST API
+  for managing surveys, collecting responses, segmenting results, and accessing
+  trend data for CSAT, NPS, and CES. The API supports sending surveys to people,
+  listing and adding survey responses, managing Autopilot configurations,
+  retrieving metrics, handling webhooks, and managing unsubscribes and people
+  records. Authentication is via HTTP Basic Auth using per-project API keys.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/delighted/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - NPS
+  - Net Promoter Score
+  - CSAT
+  - Customer Satisfaction
+  - CES
+  - Customer Effort Score
+  - Survey
+  - Customer Experience
+  - Feedback
+  - eNPS
+apis:
+  - aid: delighted:delighted-api
+    name: Delighted API
+    description: >-
+      REST API for the Delighted customer satisfaction platform. Enables sending
+      surveys, retrieving and adding survey responses, accessing NPS and CSAT
+      metrics, managing Autopilot drip campaigns, handling webhooks for
+      real-time events, and managing people records including unsubscribes and
+      bounces.
+    humanURL: https://app.delighted.com/docs/api
+    baseURL: https://api.delighted.com
+    tags:
+      - NPS
+      - CSAT
+      - CES
+      - Survey
+      - Metrics
+      - Webhooks
+      - Autopilot
+    properties:
+      - type: Documentation
+        url: https://app.delighted.com/docs/api
+      - type: Authentication
+        url: https://app.delighted.com/docs/api
+      - type: Webhooks
+        url: https://app.delighted.com/docs/api/webhooks
+      - type: Libraries
+        url: https://app.delighted.com/docs/api/libraries
+common:
+  - type: Website
+    url: https://delighted.com/
+  - type: Documentation
+    url: https://app.delighted.com/docs/api
+  - type: GitHubOrg
+    url: https://github.com/delighted
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/delighted-inc-/
+  - type: Blog
+    url: https://delighted.com/blog
+  - type: Pricing
+    url: https://delighted.com/pricing
+  - type: X
+    url: https://twitter.com/delighted
+  - type: Plans
+    url: plans/delighted-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/delighted-rate-limits.yml
+  - type: FinOps
+    url: finops/delighted-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
