@@ -1,0 +1,177 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "delighted": "https://app.delighted.com/docs/api#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Person": {
+      "@id": "delighted:Person",
+      "@type": "@id"
+    },
+    "SurveyResponse": {
+      "@id": "delighted:SurveyResponse",
+      "@type": "@id"
+    },
+    "Metrics": {
+      "@id": "delighted:Metrics",
+      "@type": "@id"
+    },
+    "AutopilotConfiguration": {
+      "@id": "delighted:AutopilotConfiguration",
+      "@type": "@id"
+    },
+    "AutopilotMembership": {
+      "@id": "delighted:AutopilotMembership",
+      "@type": "@id"
+    },
+    "Note": {
+      "@id": "delighted:Note",
+      "@type": "@id"
+    },
+    "WebhookPayload": {
+      "@id": "delighted:WebhookPayload",
+      "@type": "@id"
+    },
+
+    "id": "@id",
+    "email": {
+      "@id": "schema:email",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "phone_number": {
+      "@id": "schema:telephone",
+      "@type": "xsd:string"
+    },
+    "created_at": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:integer"
+    },
+    "updated_at": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:integer"
+    },
+    "score": {
+      "@id": "schema:ratingValue",
+      "@type": "xsd:integer"
+    },
+    "comment": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "permalink": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "survey_type": {
+      "@id": "delighted:surveyType",
+      "@type": "xsd:string"
+    },
+    "person_properties": {
+      "@id": "delighted:personProperties"
+    },
+    "notes": {
+      "@id": "delighted:notes",
+      "@container": "@set"
+    },
+    "tags": {
+      "@id": "delighted:tags",
+      "@container": "@set"
+    },
+    "additional_answers": {
+      "@id": "delighted:additionalAnswers",
+      "@container": "@set"
+    },
+    "nps": {
+      "@id": "delighted:nps",
+      "@type": "xsd:integer"
+    },
+    "promoter_count": {
+      "@id": "delighted:promoterCount",
+      "@type": "xsd:integer"
+    },
+    "promoter_percent": {
+      "@id": "delighted:promoterPercent",
+      "@type": "xsd:integer"
+    },
+    "passive_count": {
+      "@id": "delighted:passiveCount",
+      "@type": "xsd:integer"
+    },
+    "passive_percent": {
+      "@id": "delighted:passivePercent",
+      "@type": "xsd:integer"
+    },
+    "detractor_count": {
+      "@id": "delighted:detractorCount",
+      "@type": "xsd:integer"
+    },
+    "detractor_percent": {
+      "@id": "delighted:detractorPercent",
+      "@type": "xsd:integer"
+    },
+    "response_count": {
+      "@id": "delighted:responseCount",
+      "@type": "xsd:integer"
+    },
+    "platform_id": {
+      "@id": "delighted:platformId",
+      "@type": "xsd:string"
+    },
+    "active": {
+      "@id": "schema:isAccessibleForFree",
+      "@type": "xsd:boolean"
+    },
+    "frequency": {
+      "@id": "delighted:frequency",
+      "@type": "xsd:integer"
+    },
+    "last_sent_at": {
+      "@id": "delighted:lastSentAt",
+      "@type": "xsd:integer"
+    },
+    "last_responded_at": {
+      "@id": "delighted:lastRespondedAt",
+      "@type": "xsd:integer"
+    },
+    "next_survey_scheduled_at": {
+      "@id": "delighted:nextSurveyScheduledAt",
+      "@type": "xsd:integer"
+    },
+    "survey_scheduled_at": {
+      "@id": "delighted:surveyScheduledAt",
+      "@type": "xsd:integer"
+    },
+    "unsubscribed_at": {
+      "@id": "delighted:unsubscribedAt",
+      "@type": "xsd:integer"
+    },
+    "bounced_at": {
+      "@id": "delighted:bouncedAt",
+      "@type": "xsd:integer"
+    },
+    "person_id": {
+      "@id": "delighted:personId",
+      "@type": "xsd:string"
+    },
+    "event_type": {
+      "@id": "delighted:eventType",
+      "@type": "xsd:string"
+    },
+    "event_id": {
+      "@id": "delighted:eventId",
+      "@type": "xsd:string"
+    },
+    "event_data": {
+      "@id": "delighted:eventData"
+    },
+    "ok": {
+      "@id": "delighted:ok",
+      "@type": "xsd:boolean"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "summary": "List recent NPS survey responses",
+  "description": "Example request to fetch survey responses from the last 30 days with person details expanded.",
+  "request": {
+    "method": "GET",
+    "url": "https://api.delighted.com/v1/survey_responses.json?per_page=20&since=1778168213&order=desc&expand[]=person",
+    "headers": {
+      "Authorization": "Basic YOUR_API_KEY_BASE64"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "id": "response_001",
+        "person": "24248363",
+        "survey_type": "nps",
+        "score": 9,
+        "comment": "Great product, easy to use!",
+        "permalink": "https://delighted.com/r/abc123",
+        "created_at": 1780760213,
+        "updated_at": 1780763813,
+        "person_properties": {
+          "customer_id": "cust_12345",
+          "plan": "pro"
+        },
+        "notes": [],
+        "tags": ["promoter"],
+        "additional_answers": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+vocabulary:
+  title: Delighted API Vocabulary
+  description: >-
+    Domain vocabulary for the Delighted customer satisfaction platform API,
+    covering NPS, CSAT, and CES survey management concepts.
+  terms:
+    - term: NPS
+      label: Net Promoter Score
+      definition: >-
+        A customer loyalty metric calculated by subtracting the percentage of
+        Detractors from the percentage of Promoters. Ranges from -100 to 100.
+    - term: CSAT
+      label: Customer Satisfaction Score
+      definition: >-
+        A metric measuring customer satisfaction with a product, service, or
+        interaction, typically on a 1-5 scale.
+    - term: CES
+      label: Customer Effort Score
+      definition: >-
+        A metric measuring how much effort a customer has to exert to get an
+        issue resolved or a task completed.
+    - term: eNPS
+      label: Employee Net Promoter Score
+      definition: >-
+        The NPS methodology applied to measure employee loyalty and satisfaction
+        within an organization.
+    - term: Promoter
+      label: Promoter
+      definition: >-
+        A survey respondent who gives a score of 9 or 10, indicating high
+        loyalty and likelihood to recommend.
+    - term: Passive
+      label: Passive
+      definition: >-
+        A survey respondent who gives a score of 7 or 8, indicating moderate
+        satisfaction but not strong advocacy.
+    - term: Detractor
+      label: Detractor
+      definition: >-
+        A survey respondent who gives a score of 0 to 6, indicating
+        dissatisfaction and potential churn risk.
+    - term: Person
+      label: Person
+      definition: >-
+        A contact record in Delighted representing an individual who can receive
+        and respond to surveys.
+    - term: SurveyResponse
+      label: Survey Response
+      definition: >-
+        A record capturing a person's survey score, optional comment, and
+        associated metadata from a completed survey interaction.
+    - term: Autopilot
+      label: Autopilot
+      definition: >-
+        A Delighted feature that automatically sends surveys to people on a
+        recurring schedule based on a configured frequency.
+    - term: AutopilotMembership
+      label: Autopilot Membership
+      definition: >-
+        A record indicating that a specific person is enrolled in an Autopilot
+        campaign for a given delivery channel (email or SMS).
+    - term: Trend
+      label: Trend
+      definition: >-
+        A saved filter or segment in Delighted used to group survey responses
+        by specific properties for reporting and metrics.
+    - term: Unsubscribe
+      label: Unsubscribe
+      definition: >-
+        The act of a person opting out of future survey emails. Unsubscribed
+        people are excluded from survey sends but their past responses are kept.
+    - term: Bounce
+      label: Bounce
+      definition: >-
+        A failed email delivery event where a survey email could not be
+        delivered to the recipient's email address.
+    - term: PersonProperties
+      label: Person Properties
+      definition: >-
+        Custom key-value metadata fields attached to a person record for
+        segmentation, targeting, and integration with external systems.
+    - term: SurveyType
+      label: Survey Type
+      definition: >-
+        The type of survey methodology used (nps, csat, ces, enps), which
+        determines the scoring scale and question format.
+    - term: Webhook
+      label: Webhook
+      definition: >-
+        An HTTP callback triggered by Delighted when specific events occur,
+        such as a survey response being created or updated, or a person
+        unsubscribing.
+    - term: Delay
+      label: Survey Delay
+      definition: >-
+        The number of seconds to wait after a survey request is made before
+        actually sending the survey to the person.
+    - term: SurveyThrottle
+      label: Survey Throttle
+      definition: >-
+        A built-in mechanism that prevents sending surveys to the same person
+        too frequently, based on when they were last surveyed.
+    - term: AdditionalAnswer
+      label: Additional Answer
+      definition: >-
+        A response to a follow-up question beyond the primary NPS/CSAT score
+        question, supporting types: free_response, scale, select_one, select_many.
+    - term: Channel
+      label: Delivery Channel
+      definition: >-
+        The method used to deliver a survey to a person. Supported channels
+        include email, sms, kiosk, link, and web.
+    - term: Permalink
+      label: Response Permalink
+      definition: >-
+        A shareable URL that provides direct access to a specific survey
+        response record in the Delighted dashboard.

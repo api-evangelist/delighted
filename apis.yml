@@ -52,6 +52,8 @@ apis:
         url: https://app.delighted.com/docs/api/webhooks
       - type: Libraries
         url: https://app.delighted.com/docs/api/libraries
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/delighted/refs/heads/main/openapi/delighted-delighted-api-openapi.yml
 common:
   - type: Website
     url: https://delighted.com/

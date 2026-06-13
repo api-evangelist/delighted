@@ -1,0 +1,24 @@
+{
+  "summary": "Get overall NPS metrics",
+  "description": "Example request to retrieve core NPS metrics for the past 90 days.",
+  "request": {
+    "method": "GET",
+    "url": "https://api.delighted.com/v1/metrics.json?since=1773416213",
+    "headers": {
+      "Authorization": "Basic YOUR_API_KEY_BASE64"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "nps": 42,
+      "promoter_count": 215,
+      "promoter_percent": 57,
+      "passive_count": 85,
+      "passive_percent": 23,
+      "detractor_count": 75,
+      "detractor_percent": 20,
+      "response_count": 375
+    }
+  }
+}

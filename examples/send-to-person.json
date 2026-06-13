@@ -1,0 +1,36 @@
+{
+  "summary": "Send NPS survey to a customer",
+  "description": "Example request to send an NPS survey via email to a new customer.",
+  "request": {
+    "method": "POST",
+    "url": "https://api.delighted.com/v1/people.json",
+    "headers": {
+      "Authorization": "Basic YOUR_API_KEY_BASE64",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "email": "jony@appleseed.com",
+      "name": "Jony Appleseed",
+      "delay": 86400,
+      "properties": {
+        "customer_id": "cust_12345",
+        "plan": "pro",
+        "question_product_name": "Acme Widget"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "id": "24248363",
+      "email": "jony@appleseed.com",
+      "name": "Jony Appleseed",
+      "survey_scheduled_at": 1780846613,
+      "properties": {
+        "customer_id": "cust_12345",
+        "plan": "pro",
+        "question_product_name": "Acme Widget"
+      }
+    }
+  }
+}

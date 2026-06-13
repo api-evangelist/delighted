@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/delighted/main/json-schema/survey-response.json",
+  "title": "SurveyResponse",
+  "description": "A survey response record from the Delighted platform.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique response identifier."
+    },
+    "person": {
+      "type": "string",
+      "description": "Person ID associated with this response."
+    },
+    "survey_type": {
+      "type": "string",
+      "description": "Type of survey (e.g. nps, csat, ces)."
+    },
+    "score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "Survey score given by the respondent."
+    },
+    "comment": {
+      "type": ["string", "null"],
+      "description": "Optional comment provided by the respondent."
+    },
+    "permalink": {
+      "type": "string",
+      "format": "uri",
+      "description": "Shareable URL to the survey response."
+    },
+    "created_at": {
+      "type": "integer",
+      "description": "Unix timestamp when the response was created."
+    },
+    "updated_at": {
+      "type": "integer",
+      "description": "Unix timestamp when the response was last updated."
+    },
+    "person_properties": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Custom properties associated with the person at time of response."
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Note"
+      },
+      "description": "Notes attached to this response."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags applied to this response."
+    },
+    "additional_answers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AdditionalAnswer"
+      },
+      "description": "Responses to additional survey questions."
+    }
+  },
+  "definitions": {
+    "Note": {
+      "type": "object",
+      "description": "A note attached to a survey response.",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "user_email": {
+          "type": "string",
+          "format": "email"
+        },
+        "created_at": {
+          "type": "integer"
+        }
+      }
+    },
+    "AdditionalAnswer": {
+      "type": "object",
+      "description": "Response to an additional survey question.",
+      "properties": {
+        "question": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "string" },
+            "type": {
+              "type": "string",
+              "enum": ["free_response", "scale", "select_one", "select_many"]
+            },
+            "text": { "type": "string" }
+          }
+        },
+        "answer": {
+          "description": "Answer value; type varies based on question type.",
+          "oneOf": [
+            { "type": "string" },
+            { "type": "integer" },
+            { "type": "array", "items": { "type": "string" } }
+          ]
+        }
+      }
+    }
+  }
+}

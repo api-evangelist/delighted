@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/delighted/main/json-schema/person.json",
+  "title": "Person",
+  "description": "A person record in the Delighted project used for survey targeting.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique person identifier."
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Person's email address."
+    },
+    "name": {
+      "type": ["string", "null"],
+      "description": "Person's name."
+    },
+    "created_at": {
+      "type": "integer",
+      "description": "Unix timestamp when the person was created."
+    },
+    "phone_number": {
+      "type": ["string", "null"],
+      "description": "Person's phone number in E.164 format."
+    },
+    "last_sent_at": {
+      "type": ["integer", "null"],
+      "description": "Unix timestamp when the last survey was sent."
+    },
+    "last_responded_at": {
+      "type": ["integer", "null"],
+      "description": "Unix timestamp when the person last responded to a survey."
+    },
+    "next_survey_scheduled_at": {
+      "type": ["integer", "null"],
+      "description": "Unix timestamp when the next survey is scheduled to be sent."
+    }
+  }
+}

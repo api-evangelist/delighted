@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/delighted/main/json-schema/metrics.json",
+  "title": "Metrics",
+  "description": "NPS and satisfaction metrics for a Delighted project.",
+  "type": "object",
+  "properties": {
+    "nps": {
+      "type": "integer",
+      "minimum": -100,
+      "maximum": 100,
+      "description": "Net Promoter Score."
+    },
+    "promoter_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of promoter responses (score 9-10)."
+    },
+    "promoter_percent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Percentage of promoters."
+    },
+    "passive_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of passive responses (score 7-8)."
+    },
+    "passive_percent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Percentage of passives."
+    },
+    "detractor_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of detractor responses (score 0-6)."
+    },
+    "detractor_percent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Percentage of detractors."
+    },
+    "response_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of responses."
+    }
+  }
+}
