@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/delighted-delighted-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: Use your Delighted API key as the username. Leave the password empty. The API
+    key is found in your project settings.
+  sources:
+  - openapi/delighted-delighted-api-openapi.yml
