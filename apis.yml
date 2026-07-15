@@ -55,6 +55,8 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/delighted/refs/heads/main/openapi/delighted-delighted-api-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/delighted-agentic-access.yml
   - type: DomainSecurity
     url: security/delighted-domain-security.yml
   - type: Authentication
