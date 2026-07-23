@@ -1,0 +1,106 @@
+openapi: 3.0.3
+info:
+  title: Delighted Autopilot Metrics API
+  description: REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.
+  version: v1
+  contact:
+    name: Delighted Support
+    url: https://app.delighted.com/docs/api
+  termsOfService: https://delighted.com/terms
+  license:
+    name: Proprietary
+    url: https://delighted.com/terms
+servers:
+- url: https://api.delighted.com/v1
+  description: Delighted API v1
+security:
+- basicAuth: []
+tags:
+- name: Metrics
+  description: Retrieve NPS and satisfaction metrics
+paths:
+  /metrics.json:
+    get:
+      operationId: getMetrics
+      summary: Get metrics
+      description: Returns NPS and satisfaction metrics for the project. By default returns core metrics; optionally returns metrics grouped by delivery channel.
+      tags:
+      - Metrics
+      parameters:
+      - name: since
+        in: query
+        description: Unix timestamp to restrict metrics to those created on or after this time.
+        schema:
+          type: integer
+      - name: until
+        in: query
+        description: Unix timestamp to restrict metrics to those created on or before this time.
+        schema:
+          type: integer
+      - name: trend
+        in: query
+        description: Restricts metrics to a specific trend using its ID.
+        schema:
+          type: string
+      - name: groups[]
+        in: query
+        description: 'Metric groups to return. Options: core, email, kiosk, link, sms, web. Default is core.'
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - core
+            - email
+            - kiosk
+            - link
+            - sms
+            - web
+        style: form
+        explode: true
+      responses:
+        '200':
+          description: Project metrics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metrics'
+        '401':
+          description: Unauthorized
+        '429':
+          description: Rate limit exceeded
+components:
+  schemas:
+    Metrics:
+      type: object
+      description: NPS and satisfaction metrics for the project.
+      properties:
+        nps:
+          type: integer
+          description: Net Promoter Score.
+        promoter_count:
+          type: integer
+          description: Number of promoter responses.
+        promoter_percent:
+          type: integer
+          description: Percentage of promoters.
+        passive_count:
+          type: integer
+          description: Number of passive responses.
+        passive_percent:
+          type: integer
+          description: Percentage of passives.
+        detractor_count:
+          type: integer
+          description: Number of detractor responses.
+        detractor_percent:
+          type: integer
+          description: Percentage of detractors.
+        response_count:
+          type: integer
+          description: Total number of responses.
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Use your Delighted API key as the username. Leave the password empty. The API key is found in your project settings.

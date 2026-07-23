@@ -1,0 +1,90 @@
+openapi: 3.0.3
+info:
+  title: Delighted Autopilot Bounces API
+  description: REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.
+  version: v1
+  contact:
+    name: Delighted Support
+    url: https://app.delighted.com/docs/api
+  termsOfService: https://delighted.com/terms
+  license:
+    name: Proprietary
+    url: https://delighted.com/terms
+servers:
+- url: https://api.delighted.com/v1
+  description: Delighted API v1
+security:
+- basicAuth: []
+tags:
+- name: Bounces
+  description: Retrieve bounced email records
+paths:
+  /bounces.json:
+    get:
+      operationId: listBouncedPeople
+      summary: List bounced people
+      description: Returns a paginated list of people whose survey emails have bounced. Results are returned oldest first.
+      tags:
+      - Bounces
+      parameters:
+      - name: per_page
+        in: query
+        description: Number of results per page. Default is 20, maximum is 100.
+        schema:
+          type: integer
+          default: 20
+          maximum: 100
+      - name: page
+        in: query
+        description: Page number to return. Default is 1.
+        schema:
+          type: integer
+          default: 1
+      - name: since
+        in: query
+        description: Unix timestamp to filter bounces on or after this time.
+        schema:
+          type: integer
+      - name: until
+        in: query
+        description: Unix timestamp to filter bounces on or before this time.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: List of bounced people
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BouncedPerson'
+        '401':
+          description: Unauthorized
+        '429':
+          description: Rate limit exceeded
+components:
+  schemas:
+    BouncedPerson:
+      type: object
+      description: A person whose survey email has bounced.
+      properties:
+        person_id:
+          type: string
+          description: Unique identifier for the person.
+        email:
+          type: string
+          format: email
+          description: Email address of the bounced contact.
+        name:
+          type: string
+          nullable: true
+          description: Person's name.
+        bounced_at:
+          type: integer
+          description: Unix timestamp when the bounce occurred.
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Use your Delighted API key as the username. Leave the password empty. The API key is found in your project settings.

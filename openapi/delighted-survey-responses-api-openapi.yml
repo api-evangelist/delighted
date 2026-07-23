@@ -1,0 +1,267 @@
+openapi: 3.0.3
+info:
+  title: Delighted Autopilot Survey Responses API
+  description: REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.
+  version: v1
+  contact:
+    name: Delighted Support
+    url: https://app.delighted.com/docs/api
+  termsOfService: https://delighted.com/terms
+  license:
+    name: Proprietary
+    url: https://delighted.com/terms
+servers:
+- url: https://api.delighted.com/v1
+  description: Delighted API v1
+security:
+- basicAuth: []
+tags:
+- name: Survey Responses
+  description: Create and retrieve survey responses
+paths:
+  /survey_responses.json:
+    get:
+      operationId: listSurveyResponses
+      summary: List survey responses
+      description: Returns a paginated list of survey responses for the project.
+      tags:
+      - Survey Responses
+      parameters:
+      - name: per_page
+        in: query
+        description: Results per page. Default is 20, maximum is 100.
+        schema:
+          type: integer
+          default: 20
+          maximum: 100
+      - name: page
+        in: query
+        description: Page number to retrieve. Default is 1.
+        schema:
+          type: integer
+          default: 1
+      - name: since
+        in: query
+        description: Unix timestamp filtering responses created on or after this time.
+        schema:
+          type: integer
+      - name: until
+        in: query
+        description: Unix timestamp filtering responses created on or before this time.
+        schema:
+          type: integer
+      - name: updated_since
+        in: query
+        description: Unix timestamp filtering responses updated on or after this time.
+        schema:
+          type: integer
+      - name: updated_until
+        in: query
+        description: Unix timestamp filtering responses updated on or before this time.
+        schema:
+          type: integer
+      - name: trend
+        in: query
+        description: Trend ID to restrict responses to a specific trend.
+        schema:
+          type: string
+      - name: person_id
+        in: query
+        description: Person ID to filter responses for a specific individual.
+        schema:
+          type: string
+      - name: person_email
+        in: query
+        description: Email address to filter responses for a specific person.
+        schema:
+          type: string
+          format: email
+      - name: order
+        in: query
+        description: 'Sort order. One of: asc (chronological), desc (reverse), asc:updated_at, or desc:updated_at.'
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+          - asc:updated_at
+          - desc:updated_at
+      - name: expand[]
+        in: query
+        description: Objects to expand in response. Can be 'person' and/or 'notes'.
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - person
+            - notes
+        style: form
+        explode: true
+      responses:
+        '200':
+          description: List of survey responses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SurveyResponse'
+        '401':
+          description: Unauthorized
+        '429':
+          description: Rate limit exceeded
+    post:
+      operationId: addSurveyResponse
+      summary: Add survey response
+      description: Manually adds a survey response for an existing person.
+      tags:
+      - Survey Responses
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddSurveyResponseRequest'
+      responses:
+        '200':
+          description: Survey response created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SurveyResponse'
+        '401':
+          description: Unauthorized
+        '422':
+          description: Unprocessable entity - validation error
+        '429':
+          description: Rate limit exceeded
+components:
+  schemas:
+    SurveyResponse:
+      type: object
+      description: A survey response record.
+      properties:
+        id:
+          type: string
+          description: Unique response identifier.
+        person:
+          type: string
+          description: Person ID associated with this response.
+        survey_type:
+          type: string
+          description: Type of survey (e.g. nps, csat, ces).
+        score:
+          type: integer
+          description: Survey score given by the respondent.
+        comment:
+          type: string
+          nullable: true
+          description: Optional comment provided by the respondent.
+        permalink:
+          type: string
+          format: uri
+          description: Shareable URL to the survey response.
+        created_at:
+          type: integer
+          description: Unix timestamp when the response was created.
+        updated_at:
+          type: integer
+          description: Unix timestamp when the response was last updated.
+        person_properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: Custom properties associated with the person at time of response.
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Note'
+          description: Notes attached to this response.
+        tags:
+          type: array
+          items:
+            type: string
+          description: Tags applied to this response.
+        additional_answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdditionalAnswer'
+          description: Responses to additional survey questions.
+    AdditionalAnswer:
+      type: object
+      description: Response to an additional survey question.
+      properties:
+        question:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Question identifier.
+            type:
+              type: string
+              enum:
+              - free_response
+              - scale
+              - select_one
+              - select_many
+              description: Question type.
+            text:
+              type: string
+              description: Question text.
+        answer:
+          description: Answer value; type varies based on question type.
+          oneOf:
+          - type: string
+          - type: integer
+          - type: array
+            items:
+              type: string
+    AddSurveyResponseRequest:
+      type: object
+      required:
+      - person
+      - score
+      description: Request body for manually adding a survey response.
+      properties:
+        person:
+          type: string
+          description: The ID of the person providing the response.
+        score:
+          type: integer
+          minimum: 0
+          maximum: 10
+          description: Rating from 0-10.
+        comment:
+          type: string
+          description: Optional feedback text from the respondent.
+        person_properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: Custom key-value pairs to attach to the response.
+        created_at:
+          type: integer
+          description: Unix timestamp when the response was collected. Defaults to current time if omitted.
+    Note:
+      type: object
+      description: A note attached to a survey response.
+      properties:
+        id:
+          type: string
+          description: Note identifier.
+        text:
+          type: string
+          description: Note content.
+        user_email:
+          type: string
+          format: email
+          description: Email of the team member who added the note.
+        created_at:
+          type: integer
+          description: Unix timestamp when the note was created.
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Use your Delighted API key as the username. Leave the password empty. The API key is found in your project settings.

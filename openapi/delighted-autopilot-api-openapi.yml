@@ -1,0 +1,426 @@
+openapi: 3.0.3
+info:
+  title: Delighted Autopilot API
+  description: REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.
+  version: v1
+  contact:
+    name: Delighted Support
+    url: https://app.delighted.com/docs/api
+  termsOfService: https://delighted.com/terms
+  license:
+    name: Proprietary
+    url: https://delighted.com/terms
+servers:
+- url: https://api.delighted.com/v1
+  description: Delighted API v1
+security:
+- basicAuth: []
+tags:
+- name: Autopilot
+  description: Manage Autopilot drip campaign configuration and membership
+paths:
+  /autopilot/email.json:
+    get:
+      operationId: getAutopilotEmailConfiguration
+      summary: Get Autopilot email configuration
+      description: Returns the Autopilot configuration for the email channel.
+      tags:
+      - Autopilot
+      responses:
+        '200':
+          description: Autopilot email configuration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutopilotConfiguration'
+        '401':
+          description: Unauthorized
+        '429':
+          description: Rate limit exceeded
+  /autopilot/sms.json:
+    get:
+      operationId: getAutopilotSmsConfiguration
+      summary: Get Autopilot SMS configuration
+      description: Returns the Autopilot configuration for the SMS channel.
+      tags:
+      - Autopilot
+      responses:
+        '200':
+          description: Autopilot SMS configuration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutopilotConfiguration'
+        '401':
+          description: Unauthorized
+        '429':
+          description: Rate limit exceeded
+  /autopilot/email/memberships.json:
+    get:
+      operationId: listAutopilotEmailMembers
+      summary: List people in email Autopilot
+      description: Returns a paginated list of people enrolled in the email Autopilot campaign.
+      tags:
+      - Autopilot
+      parameters:
+      - name: per_page
+        in: query
+        description: Results per page. Default is 20, maximum is 100.
+        schema:
+          type: integer
+          default: 20
+          maximum: 100
+      - name: person_id
+        in: query
+        description: Filter by person ID.
+        schema:
+          type: string
+      - name: person_email
+        in: query
+        description: Filter by person email.
+        schema:
+          type: string
+          format: email
+      - name: person_phone_number
+        in: query
+        description: Filter by phone number in E.164 format.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of Autopilot email memberships
+          headers:
+            Link:
+              schema:
+                type: string
+              description: Cursor-based pagination link for next page
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AutopilotMembership'
+        '401':
+          description: Unauthorized
+        '429':
+          description: Rate limit exceeded
+    post:
+      operationId: addPersonToAutopilotEmail
+      summary: Add person to email Autopilot
+      description: Enrolls a person in the email Autopilot drip campaign.
+      tags:
+      - Autopilot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AutopilotMembershipRequest'
+      responses:
+        '200':
+          description: Person added to Autopilot
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutopilotMembershipCreated'
+        '401':
+          description: Unauthorized
+        '422':
+          description: Unprocessable entity
+        '429':
+          description: Rate limit exceeded
+    delete:
+      operationId: removePersonFromAutopilotEmail
+      summary: Remove person from email Autopilot
+      description: Removes a person from the email Autopilot campaign and cancels any already-scheduled Autopilot surveys. Preserves the person record and existing responses.
+      tags:
+      - Autopilot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AutopilotRemoveRequest'
+      responses:
+        '200':
+          description: Person removed from Autopilot
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutopilotRemoveResponse'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Person not found in Autopilot
+        '429':
+          description: Rate limit exceeded
+  /autopilot/sms/memberships.json:
+    get:
+      operationId: listAutopilotSmsMembers
+      summary: List people in SMS Autopilot
+      description: Returns a paginated list of people enrolled in the SMS Autopilot campaign.
+      tags:
+      - Autopilot
+      parameters:
+      - name: per_page
+        in: query
+        description: Results per page. Default is 20, maximum is 100.
+        schema:
+          type: integer
+          default: 20
+          maximum: 100
+      - name: person_id
+        in: query
+        description: Filter by person ID.
+        schema:
+          type: string
+      - name: person_email
+        in: query
+        description: Filter by person email.
+        schema:
+          type: string
+          format: email
+      - name: person_phone_number
+        in: query
+        description: Filter by phone number in E.164 format.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of Autopilot SMS memberships
+          headers:
+            Link:
+              schema:
+                type: string
+              description: Cursor-based pagination link for next page
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AutopilotMembership'
+        '401':
+          description: Unauthorized
+        '429':
+          description: Rate limit exceeded
+    post:
+      operationId: addPersonToAutopilotSms
+      summary: Add person to SMS Autopilot
+      description: Enrolls a person in the SMS Autopilot drip campaign.
+      tags:
+      - Autopilot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AutopilotMembershipRequest'
+      responses:
+        '200':
+          description: Person added to SMS Autopilot
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutopilotMembershipCreated'
+        '401':
+          description: Unauthorized
+        '422':
+          description: Unprocessable entity
+        '429':
+          description: Rate limit exceeded
+    delete:
+      operationId: removePersonFromAutopilotSms
+      summary: Remove person from SMS Autopilot
+      description: Removes a person from the SMS Autopilot campaign and cancels any already-scheduled Autopilot surveys.
+      tags:
+      - Autopilot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AutopilotRemoveRequest'
+      responses:
+        '200':
+          description: Person removed from Autopilot
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutopilotRemoveResponse'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Person not found in Autopilot
+        '429':
+          description: Rate limit exceeded
+components:
+  schemas:
+    AutopilotConfiguration:
+      type: object
+      description: Autopilot configuration for a delivery channel.
+      properties:
+        platform_id:
+          type: string
+          description: The name of the distribution platform (e.g. email, sms).
+        active:
+          type: boolean
+          description: Whether Autopilot is enabled for this platform.
+        frequency:
+          type: integer
+          description: Number of seconds between recurring surveys for people in Autopilot.
+        created_at:
+          type: integer
+          description: Unix timestamp when this configuration was initially set up.
+        updated_at:
+          type: integer
+          description: Unix timestamp of the most recent configuration change.
+    AutopilotMembership:
+      type: object
+      description: An Autopilot membership record.
+      properties:
+        created_at:
+          type: integer
+          description: Unix timestamp when the person joined Autopilot.
+        updated_at:
+          type: integer
+          description: Unix timestamp of last property or survey change.
+        person:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+              nullable: true
+            email:
+              type: string
+              format: email
+            phone_number:
+              type: string
+              nullable: true
+            created_at:
+              type: integer
+        next_survey_request:
+          type: object
+          nullable: true
+          properties:
+            id:
+              type: string
+              description: Survey request identifier.
+            created_at:
+              type: integer
+              description: Unix timestamp when the survey request was created.
+            survey_scheduled_at:
+              type: integer
+              description: Unix timestamp when the survey is scheduled to be sent.
+            properties:
+              type: object
+              additionalProperties:
+                type: string
+              description: Custom property key-value pairs.
+    AutopilotRemoveResponse:
+      type: object
+      description: Response after removing a person from Autopilot.
+      properties:
+        person:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+              nullable: true
+            email:
+              type: string
+              format: email
+            created_at:
+              type: integer
+            phone_number:
+              type: string
+              nullable: true
+    AutopilotMembershipCreated:
+      type: object
+      description: Response after adding a person to Autopilot.
+      properties:
+        person:
+          $ref: '#/components/schemas/Person'
+        properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: Custom properties set for this Autopilot membership.
+    AutopilotRemoveRequest:
+      type: object
+      description: Request body for removing a person from Autopilot. Specify exactly one identifier.
+      properties:
+        person_id:
+          type: string
+          description: Unique identifier of the person.
+        person_email:
+          type: string
+          format: email
+          description: Email address of the person.
+        person_phone_number:
+          type: string
+          description: Phone number in E.164 format.
+    Person:
+      type: object
+      description: A person record in the Delighted project.
+      properties:
+        id:
+          type: string
+          description: Unique person identifier.
+        email:
+          type: string
+          format: email
+          description: Person's email address.
+        name:
+          type: string
+          nullable: true
+          description: Person's name.
+        created_at:
+          type: integer
+          description: Unix timestamp when the person was created.
+        phone_number:
+          type: string
+          nullable: true
+          description: Person's phone number in E.164 format.
+        last_sent_at:
+          type: integer
+          nullable: true
+          description: Unix timestamp when the last survey was sent.
+        last_responded_at:
+          type: integer
+          nullable: true
+          description: Unix timestamp when the person last responded to a survey.
+        next_survey_scheduled_at:
+          type: integer
+          nullable: true
+          description: Unix timestamp when the next survey is scheduled to be sent.
+    AutopilotMembershipRequest:
+      type: object
+      description: Request body for adding a person to Autopilot.
+      properties:
+        person_id:
+          type: string
+          description: Person's unique identifier.
+        person_email:
+          type: string
+          format: email
+          description: Person's email address. Required for email Autopilot.
+        person_phone_number:
+          type: string
+          description: Person's phone number in E.164 format. Required for SMS Autopilot.
+        person_name:
+          type: string
+          description: Person's name.
+        properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: 'Custom key-value pairs for segmentation. Supports special keys: question_product_name, delighted_email_subject, delighted_intro_message, locale, thank_you_message, thank_you_link_text, thank_you_link_url.'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Use your Delighted API key as the username. Leave the password empty. The API key is found in your project settings.
