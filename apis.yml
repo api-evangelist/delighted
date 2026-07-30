@@ -8,7 +8,20 @@ description: >-
   retrieving metrics, handling webhooks, and managing unsubscribes and people
   records. Authentication is via HTTP Basic Auth using per-project API keys.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/delighted.png
 url: https://raw.githubusercontent.com/api-evangelist/delighted/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -25,35 +38,114 @@ tags:
   - Feedback
   - eNPS
 apis:
-  - aid: delighted:delighted-api
-    name: Delighted API
-    description: >-
-      REST API for the Delighted customer satisfaction platform. Enables sending
-      surveys, retrieving and adding survey responses, accessing NPS and CSAT
-      metrics, managing Autopilot drip campaigns, handling webhooks for
-      real-time events, and managing people records including unsubscribes and
-      bounces.
-    humanURL: https://app.delighted.com/docs/api
-    baseURL: https://api.delighted.com
-    tags:
-      - NPS
-      - CSAT
-      - CES
-      - Survey
-      - Metrics
-      - Webhooks
-      - Autopilot
-    properties:
-      - type: Documentation
-        url: https://app.delighted.com/docs/api
-      - type: Authentication
-        url: https://app.delighted.com/docs/api
-      - type: Webhooks
-        url: https://app.delighted.com/docs/api/webhooks
-      - type: Libraries
-        url: https://app.delighted.com/docs/api/libraries
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/delighted/refs/heads/main/openapi/delighted-delighted-api-openapi.yml
+- aid: delighted:delighted-autopilot-api
+  name: Delighted Autopilot API
+  description: Manage Autopilot drip campaign configuration and membership
+  humanURL: https://app.delighted.com/docs/api
+  baseURL: https://api.delighted.com
+  tags:
+  - Autopilot
+  properties:
+  - type: OpenAPI
+    url: openapi/delighted-autopilot-api-openapi.yml
+  - type: Documentation
+    url: https://app.delighted.com/docs/api
+  - type: Authentication
+    url: https://app.delighted.com/docs/api
+  - type: Webhooks
+    url: https://app.delighted.com/docs/api/webhooks
+  - type: Libraries
+    url: https://app.delighted.com/docs/api/libraries
+- aid: delighted:delighted-bounces-api
+  name: Delighted Bounces API
+  description: Retrieve bounced email records
+  humanURL: https://app.delighted.com/docs/api
+  baseURL: https://api.delighted.com
+  tags:
+  - Bounces
+  properties:
+  - type: OpenAPI
+    url: openapi/delighted-bounces-api-openapi.yml
+  - type: Documentation
+    url: https://app.delighted.com/docs/api
+  - type: Authentication
+    url: https://app.delighted.com/docs/api
+  - type: Webhooks
+    url: https://app.delighted.com/docs/api/webhooks
+  - type: Libraries
+    url: https://app.delighted.com/docs/api/libraries
+- aid: delighted:delighted-metrics-api
+  name: Delighted Metrics API
+  description: Retrieve NPS and satisfaction metrics
+  humanURL: https://app.delighted.com/docs/api
+  baseURL: https://api.delighted.com
+  tags:
+  - Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/delighted-metrics-api-openapi.yml
+  - type: Documentation
+    url: https://app.delighted.com/docs/api
+  - type: Authentication
+    url: https://app.delighted.com/docs/api
+  - type: Webhooks
+    url: https://app.delighted.com/docs/api/webhooks
+  - type: Libraries
+    url: https://app.delighted.com/docs/api/libraries
+- aid: delighted:delighted-people-api
+  name: Delighted People API
+  description: Manage people records for survey targeting
+  humanURL: https://app.delighted.com/docs/api
+  baseURL: https://api.delighted.com
+  tags:
+  - People
+  properties:
+  - type: OpenAPI
+    url: openapi/delighted-people-api-openapi.yml
+  - type: Documentation
+    url: https://app.delighted.com/docs/api
+  - type: Authentication
+    url: https://app.delighted.com/docs/api
+  - type: Webhooks
+    url: https://app.delighted.com/docs/api/webhooks
+  - type: Libraries
+    url: https://app.delighted.com/docs/api/libraries
+- aid: delighted:delighted-survey-responses-api
+  name: Delighted Survey Responses API
+  description: Create and retrieve survey responses
+  humanURL: https://app.delighted.com/docs/api
+  baseURL: https://api.delighted.com
+  tags:
+  - Survey Responses
+  properties:
+  - type: OpenAPI
+    url: openapi/delighted-survey-responses-api-openapi.yml
+  - type: Documentation
+    url: https://app.delighted.com/docs/api
+  - type: Authentication
+    url: https://app.delighted.com/docs/api
+  - type: Webhooks
+    url: https://app.delighted.com/docs/api/webhooks
+  - type: Libraries
+    url: https://app.delighted.com/docs/api/libraries
+- aid: delighted:delighted-unsubscribes-api
+  name: Delighted Unsubscribes API
+  description: Manage unsubscribe lists
+  humanURL: https://app.delighted.com/docs/api
+  baseURL: https://api.delighted.com
+  tags:
+  - Unsubscribes
+  properties:
+  - type: OpenAPI
+    url: openapi/delighted-unsubscribes-api-openapi.yml
+  - type: Documentation
+    url: https://app.delighted.com/docs/api
+  - type: Authentication
+    url: https://app.delighted.com/docs/api
+  - type: Webhooks
+    url: https://app.delighted.com/docs/api/webhooks
+  - type: Libraries
+    url: https://app.delighted.com/docs/api/libraries
 common:
   - type: AgenticAccess
     url: agentic-access/delighted-agentic-access.yml
