@@ -1,0 +1,24 @@
+{
+  "provider": "delighted",
+  "sources": [
+    "delighted-autopilot-api-openapi.yml",
+    "delighted-bounces-api-openapi.yml",
+    "delighted-metrics-api-openapi.yml",
+    "delighted-people-api-openapi.yml",
+    "delighted-survey-responses-api-openapi.yml",
+    "delighted-unsubscribes-api-openapi.yml"
+  ],
+  "outputs": [
+    "delighted-autopilot-api-openapi.yml",
+    "delighted-bounces-api-openapi.yml",
+    "delighted-metrics-api-openapi.yml",
+    "delighted-people-api-openapi.yml",
+    "delighted-survey-responses-api-openapi.yml",
+    "delighted-unsubscribes-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
