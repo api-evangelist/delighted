@@ -1,0 +1,1857 @@
+{
+  "item": [
+    {
+      "id": "7410574d-fe5e-444c-946a-7a5a351b0df1",
+      "name": "Autopilot",
+      "description": {
+        "content": "Manage Autopilot drip campaign configuration and membership",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e5a03db4-a243-45c2-a236-7d158fa147a7",
+          "name": "Get Autopilot email configuration",
+          "request": {
+            "name": "Get Autopilot email configuration",
+            "description": {
+              "content": "Returns the Autopilot configuration for the email channel.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "autopilot",
+                "email.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aadaa03f-6309-4c0b-9a83-85cfd662ac2b",
+              "name": "Autopilot email configuration",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"platform_id\": \"string\",\n  \"active\": true,\n  \"frequency\": 4991,\n  \"created_at\": 1876,\n  \"updated_at\": 4151\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "955a709f-a02a-4f83-9d84-657f5c04d944",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a7a3fbac-5112-49f3-8c2e-66d22cce891c",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30e75c83-d409-4116-ad9c-7ca5c37efca9",
+          "name": "Get Autopilot SMS configuration",
+          "request": {
+            "name": "Get Autopilot SMS configuration",
+            "description": {
+              "content": "Returns the Autopilot configuration for the SMS channel.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "autopilot",
+                "sms.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "733b8567-ca1f-4f32-ad60-71431f63eff1",
+              "name": "Autopilot SMS configuration",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"platform_id\": \"string\",\n  \"active\": true,\n  \"frequency\": 4991,\n  \"created_at\": 1876,\n  \"updated_at\": 4151\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6a2af053-26ee-4472-83c9-7e8ba6113298",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c5071b28-5fc8-4096-80ca-343924c779af",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a504c35-66df-40b7-972f-151a0836a7a2",
+          "name": "List people in email Autopilot",
+          "request": {
+            "name": "List people in email Autopilot",
+            "description": {
+              "content": "Returns a paginated list of people enrolled in the email Autopilot campaign.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "autopilot",
+                "email",
+                "memberships.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "20",
+                  "description": "Results per page. Default is 20, maximum is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "person_id",
+                  "value": "<string>",
+                  "description": "Filter by person ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "person_email",
+                  "value": "<email>",
+                  "description": "Filter by person email."
+                },
+                {
+                  "disabled": false,
+                  "key": "person_phone_number",
+                  "value": "<string>",
+                  "description": "Filter by phone number in E.164 format."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5032ec96-42f4-49ac-9aaa-63b7958fce64",
+              "name": "List of Autopilot email memberships",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "person_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "person_phone_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Cursor-based pagination link for next page",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"created_at\": 3986,\n    \"updated_at\": 3898,\n    \"person\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"email\": \"a9VSa@vf.piff\",\n      \"phone_number\": \"string\",\n      \"created_at\": 726\n    },\n    \"next_survey_request\": {\n      \"id\": \"string\",\n      \"created_at\": 6010,\n      \"survey_scheduled_at\": 8745,\n      \"properties\": {\n        \"key_0\": \"string\"\n      }\n    }\n  },\n  {\n    \"created_at\": 7069,\n    \"updated_at\": 5427,\n    \"person\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"email\": \"jypsaKo@wskNAfuFImBxdHQwiypkeSIi.wx\",\n      \"phone_number\": \"string\",\n      \"created_at\": 7046\n    },\n    \"next_survey_request\": {\n      \"id\": \"string\",\n      \"created_at\": 7888,\n      \"survey_scheduled_at\": 7242,\n      \"properties\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8c238dd2-c82a-4197-8f97-4d44b923def2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "person_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "person_phone_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a31b2511-64e6-43f8-bd98-ff8e0cc4b763",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "person_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "person_phone_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6a1765c4-23eb-4a11-b85f-437148543a81",
+          "name": "Add person to email Autopilot",
+          "request": {
+            "name": "Add person to email Autopilot",
+            "description": {
+              "content": "Enrolls a person in the email Autopilot drip campaign.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "autopilot",
+                "email",
+                "memberships.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\",\n  \"person_name\": \"<string>\",\n  \"properties\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f6246bc5-9422-4eef-8840-2ea37c7e0e3a",
+              "name": "Person added to Autopilot",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\",\n  \"person_name\": \"<string>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"person\": {\n    \"id\": \"string\",\n    \"email\": \"V7Rp@zXNtmhUadFdgSFMlKRIXoO.sa\",\n    \"name\": \"string\",\n    \"created_at\": 7402,\n    \"phone_number\": \"string\",\n    \"last_sent_at\": 3566,\n    \"last_responded_at\": 4784,\n    \"next_survey_scheduled_at\": 281\n  },\n  \"properties\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "48864515-dc1f-44c9-853d-9cfe044de3f4",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\",\n  \"person_name\": \"<string>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a7e6c7ca-ae05-4af4-99b5-376bcde77ed3",
+              "name": "Unprocessable entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\",\n  \"person_name\": \"<string>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b2b1aa06-3941-4f82-9094-730fe176554e",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\",\n  \"person_name\": \"<string>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c36db716-e327-41be-acb9-67f973c33b33",
+          "name": "Remove person from email Autopilot",
+          "request": {
+            "name": "Remove person from email Autopilot",
+            "description": {
+              "content": "Removes a person from the email Autopilot campaign and cancels any already-scheduled Autopilot surveys. Preserves the person record and existing responses.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "autopilot",
+                "email",
+                "memberships.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b70a7228-1e3c-481e-87c8-08bb9c961878",
+              "name": "Person removed from Autopilot",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"person\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"email\": \"dudBg1e50i@CkhgAUQ.lpp\",\n    \"created_at\": 6593,\n    \"phone_number\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ffa9803f-50b8-455a-bbcc-fdce2a8fb4e1",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8d55bdd3-be95-4e4e-80ac-ad320ecc9fec",
+              "name": "Person not found in Autopilot",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76eae824-57e5-4959-9529-09086fabe8c4",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "email",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80715296-1375-4a39-933d-05f83a7b870d",
+          "name": "List people in SMS Autopilot",
+          "request": {
+            "name": "List people in SMS Autopilot",
+            "description": {
+              "content": "Returns a paginated list of people enrolled in the SMS Autopilot campaign.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "autopilot",
+                "sms",
+                "memberships.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "20",
+                  "description": "Results per page. Default is 20, maximum is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "person_id",
+                  "value": "<string>",
+                  "description": "Filter by person ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "person_email",
+                  "value": "<email>",
+                  "description": "Filter by person email."
+                },
+                {
+                  "disabled": false,
+                  "key": "person_phone_number",
+                  "value": "<string>",
+                  "description": "Filter by phone number in E.164 format."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00666405-dbfa-47eb-9ca6-c295955caf20",
+              "name": "List of Autopilot SMS memberships",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "person_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "person_phone_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Cursor-based pagination link for next page",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"created_at\": 3986,\n    \"updated_at\": 3898,\n    \"person\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"email\": \"a9VSa@vf.piff\",\n      \"phone_number\": \"string\",\n      \"created_at\": 726\n    },\n    \"next_survey_request\": {\n      \"id\": \"string\",\n      \"created_at\": 6010,\n      \"survey_scheduled_at\": 8745,\n      \"properties\": {\n        \"key_0\": \"string\"\n      }\n    }\n  },\n  {\n    \"created_at\": 7069,\n    \"updated_at\": 5427,\n    \"person\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"email\": \"jypsaKo@wskNAfuFImBxdHQwiypkeSIi.wx\",\n      \"phone_number\": \"string\",\n      \"created_at\": 7046\n    },\n    \"next_survey_request\": {\n      \"id\": \"string\",\n      \"created_at\": 7888,\n      \"survey_scheduled_at\": 7242,\n      \"properties\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "547cacf9-0cf4-488b-b55d-3c175a0052a6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "person_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "person_phone_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "709e95b9-389c-45a6-bc44-a9e320db40e7",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "person_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "person_phone_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22b70e5f-9d3a-4dd7-b0d0-7043eb048eb0",
+          "name": "Add person to SMS Autopilot",
+          "request": {
+            "name": "Add person to SMS Autopilot",
+            "description": {
+              "content": "Enrolls a person in the SMS Autopilot drip campaign.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "autopilot",
+                "sms",
+                "memberships.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\",\n  \"person_name\": \"<string>\",\n  \"properties\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4c9ad0cb-7478-40a2-bc05-ce2e08dec754",
+              "name": "Person added to SMS Autopilot",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\",\n  \"person_name\": \"<string>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"person\": {\n    \"id\": \"string\",\n    \"email\": \"V7Rp@zXNtmhUadFdgSFMlKRIXoO.sa\",\n    \"name\": \"string\",\n    \"created_at\": 7402,\n    \"phone_number\": \"string\",\n    \"last_sent_at\": 3566,\n    \"last_responded_at\": 4784,\n    \"next_survey_scheduled_at\": 281\n  },\n  \"properties\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f6013ca1-ae3c-4c74-adfd-6b63d5e00f2b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\",\n  \"person_name\": \"<string>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "31bb3394-0616-4535-b785-b8ef9b2b7480",
+              "name": "Unprocessable entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\",\n  \"person_name\": \"<string>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "06e0e755-474a-41aa-9b59-2015e0ea13e1",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\",\n  \"person_name\": \"<string>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf6d44ee-b14b-4da7-8453-f553d0b0c9a5",
+          "name": "Remove person from SMS Autopilot",
+          "request": {
+            "name": "Remove person from SMS Autopilot",
+            "description": {
+              "content": "Removes a person from the SMS Autopilot campaign and cancels any already-scheduled Autopilot surveys.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "autopilot",
+                "sms",
+                "memberships.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ccf87ca7-903b-4ef0-b5de-01e892047b8c",
+              "name": "Person removed from Autopilot",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"person\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"email\": \"dudBg1e50i@CkhgAUQ.lpp\",\n    \"created_at\": 6593,\n    \"phone_number\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "02a07f36-83d9-44dd-b528-e71ac33d602e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fd9fc586-6d49-465c-8a60-d946fb1de634",
+              "name": "Person not found in Autopilot",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6c31020-03cb-457d-b85d-b6b57fc3a6cb",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "autopilot",
+                    "sms",
+                    "memberships.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person_id\": \"<string>\",\n  \"person_email\": \"<email>\",\n  \"person_phone_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.delighted.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6899d783-32df-43d0-a40c-d45b296b132e",
+    "name": "Delighted Autopilot API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.\n\nContact Support:\n Name: Delighted Support",
+      "type": "text/plain"
+    }
+  }
+}

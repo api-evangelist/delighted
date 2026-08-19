@@ -1,0 +1,77 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Delighted Autopilot Unsubscribes API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Unsubscribes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List unsubscribed people",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.delighted.com/v1/unsubscribes.json",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page. Default is 20, maximum is 100."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return. Default is 1."
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp to filter unsubscribes on or after this date."
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp to filter unsubscribes on or before this date."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of people who have unsubscribed from surveys."
+        },
+        {
+          "info": {
+            "name": "Unsubscribe person",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.delighted.com/v1/unsubscribes.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds a person to the unsubscribe list, preventing them from receiving further survey emails. Does not remove their previous survey responses."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

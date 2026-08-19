@@ -1,0 +1,990 @@
+{
+  "item": [
+    {
+      "id": "0b076d64-eff0-42f4-93e5-6bc0b8a70fa4",
+      "name": "People",
+      "description": {
+        "content": "Manage people records for survey targeting",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4d805498-2ce9-4f4a-9672-d4e249451b94",
+          "name": "Send survey to person",
+          "request": {
+            "name": "Send survey to person",
+            "description": {
+              "content": "Creates or updates a person record and optionally schedules a survey to be sent to them. If the person already exists (matched by email or phone), their record is updated with any new properties.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\",\n  \"phone_number\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"name\": \"<string>\",\n  \"delay\": \"<integer>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"send\": true,\n  \"last_sent_at\": \"<integer>\",\n  \"email_update\": \"<email>\",\n  \"phone_number_update\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "efcfcf13-3b44-4d9d-8981-085490901758",
+              "name": "Person created or updated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<email>\",\n  \"phone_number\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"name\": \"<string>\",\n  \"delay\": \"<integer>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"send\": true,\n  \"last_sent_at\": \"<integer>\",\n  \"email_update\": \"<email>\",\n  \"phone_number_update\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"email\": \"FPoCGZZSM7@HrjNULKEgAVKxLKGQcSO.rmv\",\n  \"name\": \"string\",\n  \"survey_scheduled_at\": 3192,\n  \"properties\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fcea240d-4161-42a3-8001-cf51a516760f",
+              "name": "Unauthorized - invalid or missing API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<email>\",\n  \"phone_number\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"name\": \"<string>\",\n  \"delay\": \"<integer>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"send\": true,\n  \"last_sent_at\": \"<integer>\",\n  \"email_update\": \"<email>\",\n  \"phone_number_update\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7d5d375b-faf7-4c54-bc08-196f5f42c796",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<email>\",\n  \"phone_number\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"name\": \"<string>\",\n  \"delay\": \"<integer>\",\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"send\": true,\n  \"last_sent_at\": \"<integer>\",\n  \"email_update\": \"<email>\",\n  \"phone_number_update\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Seconds to wait before retrying",
+                  "key": "Retry-After",
+                  "value": "1812"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60841fd2-ead0-456c-a4f0-6e2de4166ef2",
+          "name": "List people",
+          "request": {
+            "name": "List people",
+            "description": {
+              "content": "Returns a paginated list of people in the project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "20",
+                  "description": "Number of results per page. Default is 20, maximum is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<integer>",
+                  "description": "Unix timestamp to limit results to people created on or after this time."
+                },
+                {
+                  "disabled": false,
+                  "key": "until",
+                  "value": "<integer>",
+                  "description": "Unix timestamp to limit results to people created on or before this time."
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<email>",
+                  "description": "Restricts results to a specific person by email address."
+                },
+                {
+                  "disabled": false,
+                  "key": "phone_number",
+                  "value": "<string>",
+                  "description": "Phone number in E.164 format (e.g. +17132746524)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4eb54d88-8b18-4a68-883e-f2b96ea91ef0",
+              "name": "List of people",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "phone_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Cursor-based pagination link for next page",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"email\": \"hkdlhh5J@ZlikDRWfVHzYKVBqgv.jkz\",\n    \"name\": \"string\",\n    \"created_at\": 5318,\n    \"phone_number\": \"string\",\n    \"last_sent_at\": 2386,\n    \"last_responded_at\": 9389,\n    \"next_survey_scheduled_at\": 6632\n  },\n  {\n    \"id\": \"string\",\n    \"email\": \"UK6xl3S@YyqwSMnsejBisNcOuWzxnAcoglY.bl\",\n    \"name\": \"string\",\n    \"created_at\": 7379,\n    \"phone_number\": \"string\",\n    \"last_sent_at\": 6730,\n    \"last_responded_at\": 4652,\n    \"next_survey_scheduled_at\": 6075\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "703ce331-8b81-479b-b2bd-95551118a115",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "phone_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0e464c09-0b09-4f3a-bf79-0f498d8abfcf",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "phone_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6175e5e3-cadf-4c17-ad1f-6a42a52141a1",
+          "name": "Delete person",
+          "request": {
+            "name": "Delete person",
+            "description": {
+              "content": "Deletes the specified person and all information related to them, including surveys, responses, properties, Autopilot membership, survey history, integration links, unsubscribe/bounce status, and testimonials.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                ":person_identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "person_identifier",
+                  "description": "(Required) Person identifier. Can be the person ID (e.g. 24248363), email prefixed with 'email:' (e.g. email:jony@appleseed.com), or phone number prefixed with 'phone_number:' (e.g. phone_number:+17132746524)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1a73fac0-119f-489c-a6be-b10b6413e67e",
+              "name": "Person deletion accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":person_identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person_identifier",
+                      "description": "(Required) Person identifier. Can be the person ID (e.g. 24248363), email prefixed with 'email:' (e.g. email:jony@appleseed.com), or phone number prefixed with 'phone_number:' (e.g. phone_number:+17132746524)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ok\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3cd2008a-9ac9-490a-b0d7-39a994b862ae",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":person_identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person_identifier",
+                      "description": "(Required) Person identifier. Can be the person ID (e.g. 24248363), email prefixed with 'email:' (e.g. email:jony@appleseed.com), or phone number prefixed with 'phone_number:' (e.g. phone_number:+17132746524)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b519317-2a8c-4bec-84a4-c36c857c50f0",
+              "name": "Person not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":person_identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person_identifier",
+                      "description": "(Required) Person identifier. Can be the person ID (e.g. 24248363), email prefixed with 'email:' (e.g. email:jony@appleseed.com), or phone number prefixed with 'phone_number:' (e.g. phone_number:+17132746524)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2948c82b-6f1d-4c62-b0d5-acfb940dce46",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":person_identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person_identifier",
+                      "description": "(Required) Person identifier. Can be the person ID (e.g. 24248363), email prefixed with 'email:' (e.g. email:jony@appleseed.com), or phone number prefixed with 'phone_number:' (e.g. phone_number:+17132746524)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9621344c-dba9-4eb1-9e9d-a0c50ac59bb8",
+          "name": "Delete pending survey requests",
+          "request": {
+            "name": "Delete pending survey requests",
+            "description": {
+              "content": "Removes all scheduled (not yet sent) survey requests for the specified person.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                ":person_email",
+                "survey_requests",
+                "pending.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<email>",
+                  "key": "person_email",
+                  "description": "(Required) Email of the person whose pending surveys should be deleted."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dbe0663e-f246-4eb7-b492-7f9de05d35d9",
+              "name": "Pending surveys deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":person_email",
+                    "survey_requests",
+                    "pending.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<email>",
+                      "key": "person_email",
+                      "description": "(Required) Email of the person whose pending surveys should be deleted."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ok\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc47ef9c-bda8-4e02-99d8-e2c0e350f10a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":person_email",
+                    "survey_requests",
+                    "pending.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<email>",
+                      "key": "person_email",
+                      "description": "(Required) Email of the person whose pending surveys should be deleted."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90faba99-8f44-4f57-ae2e-9cf7f2227cc3",
+              "name": "Person not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":person_email",
+                    "survey_requests",
+                    "pending.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<email>",
+                      "key": "person_email",
+                      "description": "(Required) Email of the person whose pending surveys should be deleted."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5faccc41-0f68-4312-adf3-02df033dc465",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":person_email",
+                    "survey_requests",
+                    "pending.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<email>",
+                      "key": "person_email",
+                      "description": "(Required) Email of the person whose pending surveys should be deleted."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.delighted.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "89f733c8-63b0-4212-a23d-58efbb94dc35",
+    "name": "Delighted Autopilot People API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.\n\nContact Support:\n Name: Delighted Support",
+      "type": "text/plain"
+    }
+  }
+}

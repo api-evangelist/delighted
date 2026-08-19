@@ -1,0 +1,661 @@
+{
+  "item": [
+    {
+      "id": "a088e0a3-6c48-4660-af1c-1c2a39fc0fbc",
+      "name": "Survey Responses",
+      "description": {
+        "content": "Create and retrieve survey responses",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0ddd3c82-32dd-49c7-a9b6-6738fa9d425c",
+          "name": "List survey responses",
+          "request": {
+            "name": "List survey responses",
+            "description": {
+              "content": "Returns a paginated list of survey responses for the project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "survey_responses.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "20",
+                  "description": "Results per page. Default is 20, maximum is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number to retrieve. Default is 1."
+                },
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<integer>",
+                  "description": "Unix timestamp filtering responses created on or after this time."
+                },
+                {
+                  "disabled": false,
+                  "key": "until",
+                  "value": "<integer>",
+                  "description": "Unix timestamp filtering responses created on or before this time."
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_since",
+                  "value": "<integer>",
+                  "description": "Unix timestamp filtering responses updated on or after this time."
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_until",
+                  "value": "<integer>",
+                  "description": "Unix timestamp filtering responses updated on or before this time."
+                },
+                {
+                  "disabled": false,
+                  "key": "trend",
+                  "value": "<string>",
+                  "description": "Trend ID to restrict responses to a specific trend."
+                },
+                {
+                  "disabled": false,
+                  "key": "person_id",
+                  "value": "<string>",
+                  "description": "Person ID to filter responses for a specific individual."
+                },
+                {
+                  "disabled": false,
+                  "key": "person_email",
+                  "value": "<email>",
+                  "description": "Email address to filter responses for a specific person."
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>",
+                  "description": "Sort order. One of: asc (chronological), desc (reverse), asc:updated_at, or desc:updated_at."
+                },
+                {
+                  "disabled": false,
+                  "key": "expand[]",
+                  "value": "<string>",
+                  "description": "Objects to expand in response. Can be 'person' and/or 'notes'."
+                },
+                {
+                  "disabled": false,
+                  "key": "expand[]",
+                  "value": "<string>",
+                  "description": "Objects to expand in response. Can be 'person' and/or 'notes'."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b1a74f1d-ab57-4e07-9391-5146fec28e8d",
+              "name": "List of survey responses",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "survey_responses.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "updated_since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "updated_until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "trend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"person\": \"string\",\n    \"survey_type\": \"string\",\n    \"score\": 3444,\n    \"comment\": \"string\",\n    \"permalink\": \"http://WTEsxxhiji.bgoL0Wrum+E+v5ah0zIgIvTWnvjypmyCLL+AXt\",\n    \"created_at\": 7839,\n    \"updated_at\": 9223,\n    \"person_properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"notes\": [\n      {\n        \"id\": \"string\",\n        \"text\": \"string\",\n        \"user_email\": \"Frn@jvcqgOsQeyiLxdDy.ibz\",\n        \"created_at\": 6618\n      },\n      {\n        \"id\": \"string\",\n        \"text\": \"string\",\n        \"user_email\": \"h8D8X@SySCXnkN.pa\",\n        \"created_at\": 9414\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"additional_answers\": [\n      {\n        \"question\": {\n          \"id\": \"string\",\n          \"type\": \"scale\",\n          \"text\": \"string\"\n        },\n        \"answer\": \"string\"\n      },\n      {\n        \"question\": {\n          \"id\": \"string\",\n          \"type\": \"select_many\",\n          \"text\": \"string\"\n        },\n        \"answer\": \"string\"\n      }\n    ]\n  },\n  {\n    \"id\": \"string\",\n    \"person\": \"string\",\n    \"survey_type\": \"string\",\n    \"score\": 4154,\n    \"comment\": \"string\",\n    \"permalink\": \"http://PGsHqyD.zpvYpWuoScakoGQX9lalof2ARSl1wDUL\",\n    \"created_at\": 2582,\n    \"updated_at\": 8995,\n    \"person_properties\": {\n      \"key_0\": \"string\"\n    },\n    \"notes\": [\n      {\n        \"id\": \"string\",\n        \"text\": \"string\",\n        \"user_email\": \"zAHKj2VPMk@cJIfbtMMsIpgngkoTaQVK.kazp\",\n        \"created_at\": 1028\n      },\n      {\n        \"id\": \"string\",\n        \"text\": \"string\",\n        \"user_email\": \"GFjE@FVyCLqTWJhCjcD.ypyz\",\n        \"created_at\": 1040\n      }\n    ],\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"additional_answers\": [\n      {\n        \"question\": {\n          \"id\": \"string\",\n          \"type\": \"scale\",\n          \"text\": \"string\"\n        },\n        \"answer\": \"string\"\n      },\n      {\n        \"question\": {\n          \"id\": \"string\",\n          \"type\": \"free_response\",\n          \"text\": \"string\"\n        },\n        \"answer\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "438a66af-bf9d-4818-822c-9bc672a114a7",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "survey_responses.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "updated_since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "updated_until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "trend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "70361e8a-8250-40e4-9d92-bdf709e76fe5",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "survey_responses.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "updated_since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "updated_until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "trend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "person_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbfeb122-551b-4f69-a6cb-0d9a493255cf",
+          "name": "Add survey response",
+          "request": {
+            "name": "Add survey response",
+            "description": {
+              "content": "Manually adds a survey response for an existing person.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "survey_responses.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"person\": \"<string>\",\n  \"score\": \"<integer>\",\n  \"comment\": \"<string>\",\n  \"person_properties\": {\n    \"key_0\": \"<string>\"\n  },\n  \"created_at\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "64bf7325-17b2-419a-a308-8b1b9581b154",
+              "name": "Survey response created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "survey_responses.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person\": \"<string>\",\n  \"score\": \"<integer>\",\n  \"comment\": \"<string>\",\n  \"person_properties\": {\n    \"key_0\": \"<string>\"\n  },\n  \"created_at\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"person\": \"string\",\n  \"survey_type\": \"string\",\n  \"score\": 5741,\n  \"comment\": \"string\",\n  \"permalink\": \"https://ELyzLOXoXaJWaLMvZApK.jnpIsqP+mVyivVWE8BCv,L,H6j..IL\",\n  \"created_at\": 2196,\n  \"updated_at\": 8100,\n  \"person_properties\": {\n    \"key_0\": \"string\"\n  },\n  \"notes\": [\n    {\n      \"id\": \"string\",\n      \"text\": \"string\",\n      \"user_email\": \"agrWS5@aLAvMwyXClkYUtzxZnzMXEAROE.ps\",\n      \"created_at\": 8394\n    },\n    {\n      \"id\": \"string\",\n      \"text\": \"string\",\n      \"user_email\": \"yRuS@jCeszOaUGJK.ci\",\n      \"created_at\": 8099\n    }\n  ],\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"additional_answers\": [\n    {\n      \"question\": {\n        \"id\": \"string\",\n        \"type\": \"select_one\",\n        \"text\": \"string\"\n      },\n      \"answer\": \"string\"\n    },\n    {\n      \"question\": {\n        \"id\": \"string\",\n        \"type\": \"select_many\",\n        \"text\": \"string\"\n      },\n      \"answer\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "584c31b6-2548-4fca-820c-cb8224f92f30",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "survey_responses.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person\": \"<string>\",\n  \"score\": \"<integer>\",\n  \"comment\": \"<string>\",\n  \"person_properties\": {\n    \"key_0\": \"<string>\"\n  },\n  \"created_at\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bf502d6b-c228-43f2-9cb7-5b399d5c26de",
+              "name": "Unprocessable entity - validation error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "survey_responses.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person\": \"<string>\",\n  \"score\": \"<integer>\",\n  \"comment\": \"<string>\",\n  \"person_properties\": {\n    \"key_0\": \"<string>\"\n  },\n  \"created_at\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "52610543-81ff-4faf-b0ec-4b531c28b033",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "survey_responses.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"person\": \"<string>\",\n  \"score\": \"<integer>\",\n  \"comment\": \"<string>\",\n  \"person_properties\": {\n    \"key_0\": \"<string>\"\n  },\n  \"created_at\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.delighted.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a58195dd-981b-4882-b45c-cb9b0a808abe",
+    "name": "Delighted Autopilot Survey Responses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.\n\nContact Support:\n Name: Delighted Support",
+      "type": "text/plain"
+    }
+  }
+}

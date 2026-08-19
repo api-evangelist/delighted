@@ -1,0 +1,181 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Delighted Autopilot API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Autopilot",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Autopilot email configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.delighted.com/v1/autopilot/email.json"
+          },
+          "docs": "Returns the Autopilot configuration for the email channel."
+        },
+        {
+          "info": {
+            "name": "Get Autopilot SMS configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.delighted.com/v1/autopilot/sms.json"
+          },
+          "docs": "Returns the Autopilot configuration for the SMS channel."
+        },
+        {
+          "info": {
+            "name": "List people in email Autopilot",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.delighted.com/v1/autopilot/email/memberships.json",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page. Default is 20, maximum is 100."
+              },
+              {
+                "name": "person_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by person ID."
+              },
+              {
+                "name": "person_email",
+                "value": "",
+                "type": "query",
+                "description": "Filter by person email."
+              },
+              {
+                "name": "person_phone_number",
+                "value": "",
+                "type": "query",
+                "description": "Filter by phone number in E.164 format."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of people enrolled in the email Autopilot campaign."
+        },
+        {
+          "info": {
+            "name": "Add person to email Autopilot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.delighted.com/v1/autopilot/email/memberships.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enrolls a person in the email Autopilot drip campaign."
+        },
+        {
+          "info": {
+            "name": "Remove person from email Autopilot",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.delighted.com/v1/autopilot/email/memberships.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Removes a person from the email Autopilot campaign and cancels any already-scheduled Autopilot surveys. Preserves the person record and existing responses."
+        },
+        {
+          "info": {
+            "name": "List people in SMS Autopilot",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.delighted.com/v1/autopilot/sms/memberships.json",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page. Default is 20, maximum is 100."
+              },
+              {
+                "name": "person_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by person ID."
+              },
+              {
+                "name": "person_email",
+                "value": "",
+                "type": "query",
+                "description": "Filter by person email."
+              },
+              {
+                "name": "person_phone_number",
+                "value": "",
+                "type": "query",
+                "description": "Filter by phone number in E.164 format."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of people enrolled in the SMS Autopilot campaign."
+        },
+        {
+          "info": {
+            "name": "Add person to SMS Autopilot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.delighted.com/v1/autopilot/sms/memberships.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enrolls a person in the SMS Autopilot drip campaign."
+        },
+        {
+          "info": {
+            "name": "Remove person from SMS Autopilot",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.delighted.com/v1/autopilot/sms/memberships.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Removes a person from the SMS Autopilot campaign and cancels any already-scheduled Autopilot surveys."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

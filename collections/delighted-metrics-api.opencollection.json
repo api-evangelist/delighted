@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Delighted Autopilot Metrics API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.delighted.com/v1/metrics.json",
+            "params": [
+              {
+                "name": "since",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp to restrict metrics to those created on or after this time."
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp to restrict metrics to those created on or before this time."
+              },
+              {
+                "name": "trend",
+                "value": "",
+                "type": "query",
+                "description": "Restricts metrics to a specific trend using its ID."
+              },
+              {
+                "name": "groups[]",
+                "value": "",
+                "type": "query",
+                "description": "Metric groups to return. Options: core, email, kiosk, link, sms, web. Default is core."
+              }
+            ]
+          },
+          "docs": "Returns NPS and satisfaction metrics for the project. By default returns core metrics; optionally returns metrics grouped by delivery channel."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

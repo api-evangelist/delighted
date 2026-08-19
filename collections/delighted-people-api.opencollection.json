@@ -1,0 +1,121 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Delighted Autopilot People API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List people",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.delighted.com/v1/people.json",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page. Default is 20, maximum is 100."
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp to limit results to people created on or after this time."
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp to limit results to people created on or before this time."
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "Restricts results to a specific person by email address."
+              },
+              {
+                "name": "phone_number",
+                "value": "",
+                "type": "query",
+                "description": "Phone number in E.164 format (e.g. +17132746524)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of people in the project."
+        },
+        {
+          "info": {
+            "name": "Send survey to person",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.delighted.com/v1/people.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or updates a person record and optionally schedules a survey to be sent to them. If the person already exists (matched by email or phone), their record is updated with any new properties."
+        },
+        {
+          "info": {
+            "name": "Delete person",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.delighted.com/v1/people/:person_identifier",
+            "params": [
+              {
+                "name": "person_identifier",
+                "value": "",
+                "type": "path",
+                "description": "Person identifier. Can be the person ID (e.g. 24248363), email prefixed with 'email:' (e.g. email:jony@appleseed.com), or phone number prefixed with 'phone_number:' (e.g. phone_number:+17132746524)."
+              }
+            ]
+          },
+          "docs": "Deletes the specified person and all information related to them, including surveys, responses, properties, Autopilot membership, survey history, integration links, unsubscribe/bounce status, and testimonials."
+        },
+        {
+          "info": {
+            "name": "Delete pending survey requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.delighted.com/v1/people/:person_email/survey_requests/pending.json",
+            "params": [
+              {
+                "name": "person_email",
+                "value": "",
+                "type": "path",
+                "description": "Email of the person whose pending surveys should be deleted."
+              }
+            ]
+          },
+          "docs": "Removes all scheduled (not yet sent) survey requests for the specified person."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

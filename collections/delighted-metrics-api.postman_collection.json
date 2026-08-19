@@ -1,0 +1,295 @@
+{
+  "item": [
+    {
+      "id": "58f94aa4-2a8c-4c01-8dde-ddec823e7f62",
+      "name": "Metrics",
+      "description": {
+        "content": "Retrieve NPS and satisfaction metrics",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "51cefe4f-5699-40d2-8cd9-f7e793e8514b",
+          "name": "Get metrics",
+          "request": {
+            "name": "Get metrics",
+            "description": {
+              "content": "Returns NPS and satisfaction metrics for the project. By default returns core metrics; optionally returns metrics grouped by delivery channel.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metrics.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "since",
+                  "value": "<integer>",
+                  "description": "Unix timestamp to restrict metrics to those created on or after this time."
+                },
+                {
+                  "disabled": false,
+                  "key": "until",
+                  "value": "<integer>",
+                  "description": "Unix timestamp to restrict metrics to those created on or before this time."
+                },
+                {
+                  "disabled": false,
+                  "key": "trend",
+                  "value": "<string>",
+                  "description": "Restricts metrics to a specific trend using its ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "groups[]",
+                  "value": "<string>",
+                  "description": "Metric groups to return. Options: core, email, kiosk, link, sms, web. Default is core."
+                },
+                {
+                  "disabled": false,
+                  "key": "groups[]",
+                  "value": "<string>",
+                  "description": "Metric groups to return. Options: core, email, kiosk, link, sms, web. Default is core."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9bb398e-6368-4d26-9785-b87a26e3dc31",
+              "name": "Project metrics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "trend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groups[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groups[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"nps\": 7751,\n  \"promoter_count\": 2931,\n  \"promoter_percent\": 1289,\n  \"passive_count\": 8402,\n  \"passive_percent\": 2232,\n  \"detractor_count\": 9780,\n  \"detractor_percent\": 5047,\n  \"response_count\": 2751\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b38a237-dcc6-4b1d-ba4e-a8554ab995b0",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "trend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groups[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groups[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6f2b957-85ce-486b-80ad-52b2c83ad7b0",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "since",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "until",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "trend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groups[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groups[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.delighted.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cbc23618-495e-443a-aaa5-6ab82b4e1a0f",
+    "name": "Delighted Autopilot Metrics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.\n\nContact Support:\n Name: Delighted Support",
+      "type": "text/plain"
+    }
+  }
+}

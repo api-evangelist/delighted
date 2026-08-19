@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Delighted Autopilot Survey Responses API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Survey Responses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List survey responses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.delighted.com/v1/survey_responses.json",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page. Default is 20, maximum is 100."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to retrieve. Default is 1."
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp filtering responses created on or after this time."
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp filtering responses created on or before this time."
+              },
+              {
+                "name": "updated_since",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp filtering responses updated on or after this time."
+              },
+              {
+                "name": "updated_until",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp filtering responses updated on or before this time."
+              },
+              {
+                "name": "trend",
+                "value": "",
+                "type": "query",
+                "description": "Trend ID to restrict responses to a specific trend."
+              },
+              {
+                "name": "person_id",
+                "value": "",
+                "type": "query",
+                "description": "Person ID to filter responses for a specific individual."
+              },
+              {
+                "name": "person_email",
+                "value": "",
+                "type": "query",
+                "description": "Email address to filter responses for a specific person."
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order. One of: asc (chronological), desc (reverse), asc:updated_at, or desc:updated_at."
+              },
+              {
+                "name": "expand[]",
+                "value": "",
+                "type": "query",
+                "description": "Objects to expand in response. Can be 'person' and/or 'notes'."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of survey responses for the project."
+        },
+        {
+          "info": {
+            "name": "Add survey response",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.delighted.com/v1/survey_responses.json",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Manually adds a survey response for an existing person."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

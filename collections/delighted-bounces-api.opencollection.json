@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Delighted Autopilot Bounces API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bounces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List bounced people",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.delighted.com/v1/bounces.json",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page. Default is 20, maximum is 100."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return. Default is 1."
+              },
+              {
+                "name": "since",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp to filter bounces on or after this time."
+              },
+              {
+                "name": "until",
+                "value": "",
+                "type": "query",
+                "description": "Unix timestamp to filter bounces on or before this time."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of people whose survey emails have bounced. Results are returned oldest first."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
