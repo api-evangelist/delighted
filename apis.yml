@@ -28,6 +28,16 @@ modified: '2026-06-13'
 specificationVersion: '0.23'
 tags:
   - NPS
+  - CSAT
+  - Customer Satisfaction
+  - CES
+  - Customer Effort Score
+  - Survey
+  - Customer Experience
+  - Feedback
+  - eNPS
+tags_raw:
+  - NPS
   - Net Promoter Score
   - CSAT
   - Customer Satisfaction
