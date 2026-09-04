@@ -27,11 +27,13 @@ accessModel:
   try_now: true
   public: false
   label: Freemium · Self-serve signup
-  confidence: high
+  confidence: medium
   source:
   - plans
   - authentication
-  generated: '2026-07-22'
+  - security
+  - {url: 'https://delighted.com/', status: 301, note: 'declared website redirects to https://www.qualtrics.com/delighted/ — a different registrable domain (delighted.com -> qualtrics.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
+  generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/delighted.png
 url: https://raw.githubusercontent.com/api-evangelist/delighted/refs/heads/main/apis.yml
