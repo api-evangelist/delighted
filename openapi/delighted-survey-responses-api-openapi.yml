@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Delighted Autopilot Survey Responses API
+  title: Delighted Survey Responses API
   description: REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.
   version: v1
   contact:
@@ -138,6 +138,32 @@ paths:
           description: Rate limit exceeded
 components:
   schemas:
+    AddSurveyResponseRequest:
+      type: object
+      required:
+      - person
+      - score
+      description: Request body for manually adding a survey response.
+      properties:
+        person:
+          type: string
+          description: The ID of the person providing the response.
+        score:
+          type: integer
+          minimum: 0
+          maximum: 10
+          description: Rating from 0-10.
+        comment:
+          type: string
+          description: Optional feedback text from the respondent.
+        person_properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: Custom key-value pairs to attach to the response.
+        created_at:
+          type: integer
+          description: Unix timestamp when the response was collected. Defaults to current time if omitted.
     SurveyResponse:
       type: object
       description: A survey response record.
@@ -155,8 +181,9 @@ components:
           type: integer
           description: Survey score given by the respondent.
         comment:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Optional comment provided by the respondent.
         permalink:
           type: string
@@ -188,6 +215,23 @@ components:
           items:
             $ref: '#/components/schemas/AdditionalAnswer'
           description: Responses to additional survey questions.
+    Note:
+      type: object
+      description: A note attached to a survey response.
+      properties:
+        id:
+          type: string
+          description: Note identifier.
+        text:
+          type: string
+          description: Note content.
+        user_email:
+          type: string
+          format: email
+          description: Email of the team member who added the note.
+        created_at:
+          type: integer
+          description: Unix timestamp when the note was created.
     AdditionalAnswer:
       type: object
       description: Response to an additional survey question.
@@ -217,49 +261,6 @@ components:
           - type: array
             items:
               type: string
-    AddSurveyResponseRequest:
-      type: object
-      required:
-      - person
-      - score
-      description: Request body for manually adding a survey response.
-      properties:
-        person:
-          type: string
-          description: The ID of the person providing the response.
-        score:
-          type: integer
-          minimum: 0
-          maximum: 10
-          description: Rating from 0-10.
-        comment:
-          type: string
-          description: Optional feedback text from the respondent.
-        person_properties:
-          type: object
-          additionalProperties:
-            type: string
-          description: Custom key-value pairs to attach to the response.
-        created_at:
-          type: integer
-          description: Unix timestamp when the response was collected. Defaults to current time if omitted.
-    Note:
-      type: object
-      description: A note attached to a survey response.
-      properties:
-        id:
-          type: string
-          description: Note identifier.
-        text:
-          type: string
-          description: Note content.
-        user_email:
-          type: string
-          format: email
-          description: Email of the team member who added the note.
-        created_at:
-          type: integer
-          description: Unix timestamp when the note was created.
   securitySchemes:
     basicAuth:
       type: http

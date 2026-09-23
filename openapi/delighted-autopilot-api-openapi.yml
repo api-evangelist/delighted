@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Delighted Autopilot API
   description: REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.
@@ -255,6 +255,53 @@ paths:
           description: Rate limit exceeded
 components:
   schemas:
+    AutopilotMembership:
+      type: object
+      description: An Autopilot membership record.
+      properties:
+        created_at:
+          type: integer
+          description: Unix timestamp when the person joined Autopilot.
+        updated_at:
+          type: integer
+          description: Unix timestamp of last property or survey change.
+        person:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type:
+              - string
+              - 'null'
+            email:
+              type: string
+              format: email
+            phone_number:
+              type:
+              - string
+              - 'null'
+            created_at:
+              type: integer
+        next_survey_request:
+          type:
+          - object
+          - 'null'
+          properties:
+            id:
+              type: string
+              description: Survey request identifier.
+            created_at:
+              type: integer
+              description: Unix timestamp when the survey request was created.
+            survey_scheduled_at:
+              type: integer
+              description: Unix timestamp when the survey is scheduled to be sent.
+            properties:
+              type: object
+              additionalProperties:
+                type: string
+              description: Custom property key-value pairs.
     AutopilotConfiguration:
       type: object
       description: Autopilot configuration for a delivery channel.
@@ -274,70 +321,6 @@ components:
         updated_at:
           type: integer
           description: Unix timestamp of the most recent configuration change.
-    AutopilotMembership:
-      type: object
-      description: An Autopilot membership record.
-      properties:
-        created_at:
-          type: integer
-          description: Unix timestamp when the person joined Autopilot.
-        updated_at:
-          type: integer
-          description: Unix timestamp of last property or survey change.
-        person:
-          type: object
-          properties:
-            id:
-              type: string
-            name:
-              type: string
-              nullable: true
-            email:
-              type: string
-              format: email
-            phone_number:
-              type: string
-              nullable: true
-            created_at:
-              type: integer
-        next_survey_request:
-          type: object
-          nullable: true
-          properties:
-            id:
-              type: string
-              description: Survey request identifier.
-            created_at:
-              type: integer
-              description: Unix timestamp when the survey request was created.
-            survey_scheduled_at:
-              type: integer
-              description: Unix timestamp when the survey is scheduled to be sent.
-            properties:
-              type: object
-              additionalProperties:
-                type: string
-              description: Custom property key-value pairs.
-    AutopilotRemoveResponse:
-      type: object
-      description: Response after removing a person from Autopilot.
-      properties:
-        person:
-          type: object
-          properties:
-            id:
-              type: string
-            name:
-              type: string
-              nullable: true
-            email:
-              type: string
-              format: email
-            created_at:
-              type: integer
-            phone_number:
-              type: string
-              nullable: true
     AutopilotMembershipCreated:
       type: object
       description: Response after adding a person to Autopilot.
@@ -349,6 +332,45 @@ components:
           additionalProperties:
             type: string
           description: Custom properties set for this Autopilot membership.
+    Person:
+      type: object
+      description: A person record in the Delighted project.
+      properties:
+        id:
+          type: string
+          description: Unique person identifier.
+        email:
+          type: string
+          format: email
+          description: Person's email address.
+        name:
+          type:
+          - string
+          - 'null'
+          description: Person's name.
+        created_at:
+          type: integer
+          description: Unix timestamp when the person was created.
+        phone_number:
+          type:
+          - string
+          - 'null'
+          description: Person's phone number in E.164 format.
+        last_sent_at:
+          type:
+          - integer
+          - 'null'
+          description: Unix timestamp when the last survey was sent.
+        last_responded_at:
+          type:
+          - integer
+          - 'null'
+          description: Unix timestamp when the person last responded to a survey.
+        next_survey_scheduled_at:
+          type:
+          - integer
+          - 'null'
+          description: Unix timestamp when the next survey is scheduled to be sent.
     AutopilotRemoveRequest:
       type: object
       description: Request body for removing a person from Autopilot. Specify exactly one identifier.
@@ -363,40 +385,28 @@ components:
         person_phone_number:
           type: string
           description: Phone number in E.164 format.
-    Person:
+    AutopilotRemoveResponse:
       type: object
-      description: A person record in the Delighted project.
+      description: Response after removing a person from Autopilot.
       properties:
-        id:
-          type: string
-          description: Unique person identifier.
-        email:
-          type: string
-          format: email
-          description: Person's email address.
-        name:
-          type: string
-          nullable: true
-          description: Person's name.
-        created_at:
-          type: integer
-          description: Unix timestamp when the person was created.
-        phone_number:
-          type: string
-          nullable: true
-          description: Person's phone number in E.164 format.
-        last_sent_at:
-          type: integer
-          nullable: true
-          description: Unix timestamp when the last survey was sent.
-        last_responded_at:
-          type: integer
-          nullable: true
-          description: Unix timestamp when the person last responded to a survey.
-        next_survey_scheduled_at:
-          type: integer
-          nullable: true
-          description: Unix timestamp when the next survey is scheduled to be sent.
+        person:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type:
+              - string
+              - 'null'
+            email:
+              type: string
+              format: email
+            created_at:
+              type: integer
+            phone_number:
+              type:
+              - string
+              - 'null'
     AutopilotMembershipRequest:
       type: object
       description: Request body for adding a person to Autopilot.

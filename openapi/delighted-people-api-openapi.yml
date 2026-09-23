@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Delighted Autopilot People API
+  title: Delighted People API
   description: REST API for the Delighted customer satisfaction platform. Enables sending surveys, retrieving and adding survey responses, accessing NPS and CSAT metrics, managing Autopilot drip campaigns, handling webhooks for real-time events, and managing people records including unsubscribes and bounces. Authentication is via HTTP Basic Auth using per-project API keys.
   version: v1
   contact:
@@ -158,14 +158,6 @@ paths:
           description: Rate limit exceeded
 components:
   schemas:
-    OkResponse:
-      type: object
-      description: Simple success response.
-      properties:
-        ok:
-          type: boolean
-          description: Indicates the operation was successful.
-          example: true
     PersonSurveyResponse:
       type: object
       description: Response after sending survey to or creating a person.
@@ -178,8 +170,9 @@ components:
           format: email
           description: Person's email address.
         name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Person's name.
         survey_scheduled_at:
           type: integer
@@ -189,6 +182,14 @@ components:
           additionalProperties:
             type: string
           description: Custom properties associated with the person.
+    OkResponse:
+      type: object
+      description: Simple success response.
+      properties:
+        ok:
+          type: boolean
+          description: Indicates the operation was successful.
+          example: true
     SendToPersonRequest:
       type: object
       description: Request body for sending a survey to a person.
@@ -243,27 +244,32 @@ components:
           format: email
           description: Person's email address.
         name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Person's name.
         created_at:
           type: integer
           description: Unix timestamp when the person was created.
         phone_number:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Person's phone number in E.164 format.
         last_sent_at:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
           description: Unix timestamp when the last survey was sent.
         last_responded_at:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
           description: Unix timestamp when the person last responded to a survey.
         next_survey_scheduled_at:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
           description: Unix timestamp when the next survey is scheduled to be sent.
   securitySchemes:
     basicAuth:

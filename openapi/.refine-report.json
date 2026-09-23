@@ -1,12 +1,7 @@
 {
   "provider": "delighted",
   "sources": [
-    "delighted-autopilot-api-openapi.yml",
-    "delighted-bounces-api-openapi.yml",
-    "delighted-metrics-api-openapi.yml",
-    "delighted-people-api-openapi.yml",
-    "delighted-survey-responses-api-openapi.yml",
-    "delighted-unsubscribes-api-openapi.yml"
+    "_original/delighted-delighted-api-openapi.yml"
   ],
   "outputs": [
     "delighted-autopilot-api-openapi.yml",
@@ -19,6 +14,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "delighted-delighted-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "delighted-autopilot-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "delighted-bounces-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "delighted-metrics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "delighted-people-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "delighted-survey-responses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "delighted-unsubscribes-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
