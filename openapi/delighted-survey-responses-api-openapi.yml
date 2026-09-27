@@ -138,32 +138,6 @@ paths:
           description: Rate limit exceeded
 components:
   schemas:
-    AddSurveyResponseRequest:
-      type: object
-      required:
-      - person
-      - score
-      description: Request body for manually adding a survey response.
-      properties:
-        person:
-          type: string
-          description: The ID of the person providing the response.
-        score:
-          type: integer
-          minimum: 0
-          maximum: 10
-          description: Rating from 0-10.
-        comment:
-          type: string
-          description: Optional feedback text from the respondent.
-        person_properties:
-          type: object
-          additionalProperties:
-            type: string
-          description: Custom key-value pairs to attach to the response.
-        created_at:
-          type: integer
-          description: Unix timestamp when the response was collected. Defaults to current time if omitted.
     SurveyResponse:
       type: object
       description: A survey response record.
@@ -261,6 +235,32 @@ components:
           - type: array
             items:
               type: string
+    AddSurveyResponseRequest:
+      type: object
+      required:
+      - person
+      - score
+      description: Request body for manually adding a survey response.
+      properties:
+        person:
+          type: string
+          description: The ID of the person providing the response.
+        score:
+          type: integer
+          minimum: 0
+          maximum: 10
+          description: Rating from 0-10.
+        comment:
+          type: string
+          description: Optional feedback text from the respondent.
+        person_properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: Custom key-value pairs to attach to the response.
+        created_at:
+          type: integer
+          description: Unix timestamp when the response was collected. Defaults to current time if omitted.
   securitySchemes:
     basicAuth:
       type: http

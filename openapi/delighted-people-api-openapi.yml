@@ -158,30 +158,6 @@ paths:
           description: Rate limit exceeded
 components:
   schemas:
-    PersonSurveyResponse:
-      type: object
-      description: Response after sending survey to or creating a person.
-      properties:
-        id:
-          type: string
-          description: Unique person identifier.
-        email:
-          type: string
-          format: email
-          description: Person's email address.
-        name:
-          type:
-          - string
-          - 'null'
-          description: Person's name.
-        survey_scheduled_at:
-          type: integer
-          description: Unix timestamp when the survey is scheduled to be sent.
-        properties:
-          type: object
-          additionalProperties:
-            type: string
-          description: Custom properties associated with the person.
     OkResponse:
       type: object
       description: Simple success response.
@@ -232,6 +208,30 @@ components:
         phone_number_update:
           type: string
           description: New phone number when updating an existing contact.
+    PersonSurveyResponse:
+      type: object
+      description: Response after sending survey to or creating a person.
+      properties:
+        id:
+          type: string
+          description: Unique person identifier.
+        email:
+          type: string
+          format: email
+          description: Person's email address.
+        name:
+          type:
+          - string
+          - 'null'
+          description: Person's name.
+        survey_scheduled_at:
+          type: integer
+          description: Unix timestamp when the survey is scheduled to be sent.
+        properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: Custom properties associated with the person.
     Person:
       type: object
       description: A person record in the Delighted project.
