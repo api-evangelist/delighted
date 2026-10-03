@@ -189,23 +189,6 @@ components:
           items:
             $ref: '#/components/schemas/AdditionalAnswer'
           description: Responses to additional survey questions.
-    Note:
-      type: object
-      description: A note attached to a survey response.
-      properties:
-        id:
-          type: string
-          description: Note identifier.
-        text:
-          type: string
-          description: Note content.
-        user_email:
-          type: string
-          format: email
-          description: Email of the team member who added the note.
-        created_at:
-          type: integer
-          description: Unix timestamp when the note was created.
     AdditionalAnswer:
       type: object
       description: Response to an additional survey question.
@@ -261,6 +244,23 @@ components:
         created_at:
           type: integer
           description: Unix timestamp when the response was collected. Defaults to current time if omitted.
+    Note:
+      type: object
+      description: A note attached to a survey response.
+      properties:
+        id:
+          type: string
+          description: Note identifier.
+        text:
+          type: string
+          description: Note content.
+        user_email:
+          type: string
+          format: email
+          description: Email of the team member who added the note.
+        created_at:
+          type: integer
+          description: Unix timestamp when the note was created.
   securitySchemes:
     basicAuth:
       type: http

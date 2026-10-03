@@ -324,53 +324,6 @@ components:
         person_phone_number:
           type: string
           description: Phone number in E.164 format.
-    AutopilotMembership:
-      type: object
-      description: An Autopilot membership record.
-      properties:
-        created_at:
-          type: integer
-          description: Unix timestamp when the person joined Autopilot.
-        updated_at:
-          type: integer
-          description: Unix timestamp of last property or survey change.
-        person:
-          type: object
-          properties:
-            id:
-              type: string
-            name:
-              type:
-              - string
-              - 'null'
-            email:
-              type: string
-              format: email
-            phone_number:
-              type:
-              - string
-              - 'null'
-            created_at:
-              type: integer
-        next_survey_request:
-          type:
-          - object
-          - 'null'
-          properties:
-            id:
-              type: string
-              description: Survey request identifier.
-            created_at:
-              type: integer
-              description: Unix timestamp when the survey request was created.
-            survey_scheduled_at:
-              type: integer
-              description: Unix timestamp when the survey is scheduled to be sent.
-            properties:
-              type: object
-              additionalProperties:
-                type: string
-              description: Custom property key-value pairs.
     Person:
       type: object
       description: A person record in the Delighted project.
@@ -429,6 +382,53 @@ components:
         updated_at:
           type: integer
           description: Unix timestamp of the most recent configuration change.
+    AutopilotMembership:
+      type: object
+      description: An Autopilot membership record.
+      properties:
+        created_at:
+          type: integer
+          description: Unix timestamp when the person joined Autopilot.
+        updated_at:
+          type: integer
+          description: Unix timestamp of last property or survey change.
+        person:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type:
+              - string
+              - 'null'
+            email:
+              type: string
+              format: email
+            phone_number:
+              type:
+              - string
+              - 'null'
+            created_at:
+              type: integer
+        next_survey_request:
+          type:
+          - object
+          - 'null'
+          properties:
+            id:
+              type: string
+              description: Survey request identifier.
+            created_at:
+              type: integer
+              description: Unix timestamp when the survey request was created.
+            survey_scheduled_at:
+              type: integer
+              description: Unix timestamp when the survey is scheduled to be sent.
+            properties:
+              type: object
+              additionalProperties:
+                type: string
+              description: Custom property key-value pairs.
   securitySchemes:
     basicAuth:
       type: http
