@@ -255,50 +255,6 @@ paths:
           description: Rate limit exceeded
 components:
   schemas:
-    AutopilotRemoveResponse:
-      type: object
-      description: Response after removing a person from Autopilot.
-      properties:
-        person:
-          type: object
-          properties:
-            id:
-              type: string
-            name:
-              type:
-              - string
-              - 'null'
-            email:
-              type: string
-              format: email
-            created_at:
-              type: integer
-            phone_number:
-              type:
-              - string
-              - 'null'
-    AutopilotMembershipRequest:
-      type: object
-      description: Request body for adding a person to Autopilot.
-      properties:
-        person_id:
-          type: string
-          description: Person's unique identifier.
-        person_email:
-          type: string
-          format: email
-          description: Person's email address. Required for email Autopilot.
-        person_phone_number:
-          type: string
-          description: Person's phone number in E.164 format. Required for SMS Autopilot.
-        person_name:
-          type: string
-          description: Person's name.
-        properties:
-          type: object
-          additionalProperties:
-            type: string
-          description: 'Custom key-value pairs for segmentation. Supports special keys: question_product_name, delighted_email_subject, delighted_intro_message, locale, thank_you_message, thank_you_link_text, thank_you_link_url.'
     AutopilotMembershipCreated:
       type: object
       description: Response after adding a person to Autopilot.
@@ -324,64 +280,28 @@ components:
         person_phone_number:
           type: string
           description: Phone number in E.164 format.
-    Person:
+    AutopilotMembershipRequest:
       type: object
-      description: A person record in the Delighted project.
+      description: Request body for adding a person to Autopilot.
       properties:
-        id:
+        person_id:
           type: string
-          description: Unique person identifier.
-        email:
+          description: Person's unique identifier.
+        person_email:
           type: string
           format: email
-          description: Person's email address.
-        name:
-          type:
-          - string
-          - 'null'
-          description: Person's name.
-        created_at:
-          type: integer
-          description: Unix timestamp when the person was created.
-        phone_number:
-          type:
-          - string
-          - 'null'
-          description: Person's phone number in E.164 format.
-        last_sent_at:
-          type:
-          - integer
-          - 'null'
-          description: Unix timestamp when the last survey was sent.
-        last_responded_at:
-          type:
-          - integer
-          - 'null'
-          description: Unix timestamp when the person last responded to a survey.
-        next_survey_scheduled_at:
-          type:
-          - integer
-          - 'null'
-          description: Unix timestamp when the next survey is scheduled to be sent.
-    AutopilotConfiguration:
-      type: object
-      description: Autopilot configuration for a delivery channel.
-      properties:
-        platform_id:
+          description: Person's email address. Required for email Autopilot.
+        person_phone_number:
           type: string
-          description: The name of the distribution platform (e.g. email, sms).
-        active:
-          type: boolean
-          description: Whether Autopilot is enabled for this platform.
-        frequency:
-          type: integer
-          description: Number of seconds between recurring surveys for people in Autopilot.
-        created_at:
-          type: integer
-          description: Unix timestamp when this configuration was initially set up.
-        updated_at:
-          type: integer
-          description: Unix timestamp of the most recent configuration change.
+          description: Person's phone number in E.164 format. Required for SMS Autopilot.
+        person_name:
+          type: string
+          description: Person's name.
+        properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: 'Custom key-value pairs for segmentation. Supports special keys: question_product_name, delighted_email_subject, delighted_intro_message, locale, thank_you_message, thank_you_link_text, thank_you_link_url.'
     AutopilotMembership:
       type: object
       description: An Autopilot membership record.
@@ -429,6 +349,86 @@ components:
               additionalProperties:
                 type: string
               description: Custom property key-value pairs.
+    Person:
+      type: object
+      description: A person record in the Delighted project.
+      properties:
+        id:
+          type: string
+          description: Unique person identifier.
+        email:
+          type: string
+          format: email
+          description: Person's email address.
+        name:
+          type:
+          - string
+          - 'null'
+          description: Person's name.
+        created_at:
+          type: integer
+          description: Unix timestamp when the person was created.
+        phone_number:
+          type:
+          - string
+          - 'null'
+          description: Person's phone number in E.164 format.
+        last_sent_at:
+          type:
+          - integer
+          - 'null'
+          description: Unix timestamp when the last survey was sent.
+        last_responded_at:
+          type:
+          - integer
+          - 'null'
+          description: Unix timestamp when the person last responded to a survey.
+        next_survey_scheduled_at:
+          type:
+          - integer
+          - 'null'
+          description: Unix timestamp when the next survey is scheduled to be sent.
+    AutopilotRemoveResponse:
+      type: object
+      description: Response after removing a person from Autopilot.
+      properties:
+        person:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type:
+              - string
+              - 'null'
+            email:
+              type: string
+              format: email
+            created_at:
+              type: integer
+            phone_number:
+              type:
+              - string
+              - 'null'
+    AutopilotConfiguration:
+      type: object
+      description: Autopilot configuration for a delivery channel.
+      properties:
+        platform_id:
+          type: string
+          description: The name of the distribution platform (e.g. email, sms).
+        active:
+          type: boolean
+          description: Whether Autopilot is enabled for this platform.
+        frequency:
+          type: integer
+          description: Number of seconds between recurring surveys for people in Autopilot.
+        created_at:
+          type: integer
+          description: Unix timestamp when this configuration was initially set up.
+        updated_at:
+          type: integer
+          description: Unix timestamp of the most recent configuration change.
   securitySchemes:
     basicAuth:
       type: http

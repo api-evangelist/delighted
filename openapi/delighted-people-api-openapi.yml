@@ -158,6 +158,14 @@ paths:
           description: Rate limit exceeded
 components:
   schemas:
+    OkResponse:
+      type: object
+      description: Simple success response.
+      properties:
+        ok:
+          type: boolean
+          description: Indicates the operation was successful.
+          example: true
     Person:
       type: object
       description: A person record in the Delighted project.
@@ -239,14 +247,6 @@ components:
         phone_number_update:
           type: string
           description: New phone number when updating an existing contact.
-    OkResponse:
-      type: object
-      description: Simple success response.
-      properties:
-        ok:
-          type: boolean
-          description: Indicates the operation was successful.
-          example: true
     PersonSurveyResponse:
       type: object
       description: Response after sending survey to or creating a person.
