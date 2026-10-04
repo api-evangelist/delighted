@@ -1,0 +1,57 @@
+slug: delighted
+provider: Delighted
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Survey Responses
+  spec_file: delighted-survey-responses-api-openapi.yml
+  capability_id: BC-430.50
+  capability_id_l1: BC-430
+  capability_name: Customer Feedback Management
+  confidence: 0.92
+  evidence: GET /survey_responses.json "List survey responses"; POST /survey_responses.json "Add survey
+    response"
+  reason: Operations list and create survey responses on an NPS/CSAT platform — directly the surveys/NPS/voice-of-customer
+    sub-capability.
+- tag: Metrics
+  spec_file: delighted-metrics-api-openapi.yml
+  capability_id: BC-430.50
+  capability_id_l1: BC-430
+  capability_name: Customer Feedback Management
+  confidence: 0.82
+  evidence: GET /metrics.json getMetrics Get metrics — "accessing NPS and CSAT metrics"
+  reason: The single operation returns aggregated NPS/CSAT survey metrics for the customer satisfaction
+    platform, which is voice-of-customer / survey measurement, i.e. Customer Feedback Management. No other
+    reading of 'Metrics' fits given the NPS/CSAT context.
+- tag: Autopilot
+  spec_file: delighted-autopilot-api-openapi.yml
+  capability_id: BC-430.50
+  capability_id_l1: BC-430
+  capability_name: Customer Feedback Management
+  confidence: 0.8
+  evidence: '''managing Autopilot drip campaigns'' ... POST /autopilot/email/memberships.json  addPersonToAutopilotEmail  Add
+    person to email Autopilot'
+  reason: Operations manage the audience and configuration of automated recurring NPS/CSAT survey sends
+    (email and SMS Autopilot memberships) on a customer-satisfaction survey platform — squarely survey/voice-of-customer
+    programme operation. Slight ambiguity versus a marketing-automation reading keeps it at 0.8.
+- tag: People
+  spec_file: delighted-people-api-openapi.yml
+  capability_id: BC-430.50
+  capability_id_l1: BC-430
+  capability_name: Customer Feedback Management
+  confidence: 0.7
+  evidence: POST /people.json sendToPersonOrCreatePerson "Send survey to person"; DELETE /people/{person_email}/survey_requests/pending.json
+    "Delete pending survey requests"
+  reason: '''People'' here are survey recipients: the operations send surveys to a person and manage pending
+    survey requests, so this is survey distribution within a voice-of-customer programme rather than generic
+    customer master data. Some ambiguity with customer data management, hence moderate confidence.'

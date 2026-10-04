@@ -171,6 +171,9 @@ apis:
   - type: Libraries
     url: https://app.delighted.com/docs/api/libraries
 common:
+  - type: CapabilityMap
+    url: capabilities/delighted-capability-edges.yml
+    name: Delighted Business Capability Map
   - type: AgenticAccess
     url: agentic-access/delighted-agentic-access.yml
   - type: DomainSecurity
