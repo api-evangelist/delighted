@@ -166,45 +166,6 @@ components:
           type: boolean
           description: Indicates the operation was successful.
           example: true
-    Person:
-      type: object
-      description: A person record in the Delighted project.
-      properties:
-        id:
-          type: string
-          description: Unique person identifier.
-        email:
-          type: string
-          format: email
-          description: Person's email address.
-        name:
-          type:
-          - string
-          - 'null'
-          description: Person's name.
-        created_at:
-          type: integer
-          description: Unix timestamp when the person was created.
-        phone_number:
-          type:
-          - string
-          - 'null'
-          description: Person's phone number in E.164 format.
-        last_sent_at:
-          type:
-          - integer
-          - 'null'
-          description: Unix timestamp when the last survey was sent.
-        last_responded_at:
-          type:
-          - integer
-          - 'null'
-          description: Unix timestamp when the person last responded to a survey.
-        next_survey_scheduled_at:
-          type:
-          - integer
-          - 'null'
-          description: Unix timestamp when the next survey is scheduled to be sent.
     SendToPersonRequest:
       type: object
       description: Request body for sending a survey to a person.
@@ -247,6 +208,45 @@ components:
         phone_number_update:
           type: string
           description: New phone number when updating an existing contact.
+    Person:
+      type: object
+      description: A person record in the Delighted project.
+      properties:
+        id:
+          type: string
+          description: Unique person identifier.
+        email:
+          type: string
+          format: email
+          description: Person's email address.
+        name:
+          type:
+          - string
+          - 'null'
+          description: Person's name.
+        created_at:
+          type: integer
+          description: Unix timestamp when the person was created.
+        phone_number:
+          type:
+          - string
+          - 'null'
+          description: Person's phone number in E.164 format.
+        last_sent_at:
+          type:
+          - integer
+          - 'null'
+          description: Unix timestamp when the last survey was sent.
+        last_responded_at:
+          type:
+          - integer
+          - 'null'
+          description: Unix timestamp when the person last responded to a survey.
+        next_survey_scheduled_at:
+          type:
+          - integer
+          - 'null'
+          description: Unix timestamp when the next survey is scheduled to be sent.
     PersonSurveyResponse:
       type: object
       description: Response after sending survey to or creating a person.

@@ -138,6 +138,23 @@ paths:
           description: Rate limit exceeded
 components:
   schemas:
+    Note:
+      type: object
+      description: A note attached to a survey response.
+      properties:
+        id:
+          type: string
+          description: Note identifier.
+        text:
+          type: string
+          description: Note content.
+        user_email:
+          type: string
+          format: email
+          description: Email of the team member who added the note.
+        created_at:
+          type: integer
+          description: Unix timestamp when the note was created.
     AddSurveyResponseRequest:
       type: object
       required:
@@ -164,6 +181,35 @@ components:
         created_at:
           type: integer
           description: Unix timestamp when the response was collected. Defaults to current time if omitted.
+    AdditionalAnswer:
+      type: object
+      description: Response to an additional survey question.
+      properties:
+        question:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Question identifier.
+            type:
+              type: string
+              enum:
+              - free_response
+              - scale
+              - select_one
+              - select_many
+              description: Question type.
+            text:
+              type: string
+              description: Question text.
+        answer:
+          description: Answer value; type varies based on question type.
+          oneOf:
+          - type: string
+          - type: integer
+          - type: array
+            items:
+              type: string
     SurveyResponse:
       type: object
       description: A survey response record.
@@ -215,52 +261,6 @@ components:
           items:
             $ref: '#/components/schemas/AdditionalAnswer'
           description: Responses to additional survey questions.
-    AdditionalAnswer:
-      type: object
-      description: Response to an additional survey question.
-      properties:
-        question:
-          type: object
-          properties:
-            id:
-              type: string
-              description: Question identifier.
-            type:
-              type: string
-              enum:
-              - free_response
-              - scale
-              - select_one
-              - select_many
-              description: Question type.
-            text:
-              type: string
-              description: Question text.
-        answer:
-          description: Answer value; type varies based on question type.
-          oneOf:
-          - type: string
-          - type: integer
-          - type: array
-            items:
-              type: string
-    Note:
-      type: object
-      description: A note attached to a survey response.
-      properties:
-        id:
-          type: string
-          description: Note identifier.
-        text:
-          type: string
-          description: Note content.
-        user_email:
-          type: string
-          format: email
-          description: Email of the team member who added the note.
-        created_at:
-          type: integer
-          description: Unix timestamp when the note was created.
   securitySchemes:
     basicAuth:
       type: http
