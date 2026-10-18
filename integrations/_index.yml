@@ -83,5 +83,5 @@
     - bronze
     - silver
     builder: 'community (Meltano Hub variant maintainers: airbyte, ticketswap)'
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
