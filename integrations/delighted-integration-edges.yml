@@ -1,4 +1,39 @@
-generated: '2026-10-14'
+generated: '2026-10-20'
+method: searched
+source:
+- https://www.twilio.com/docs/segment/connections/destinations/catalog/delighted
+- https://composio.dev/toolkits/delighted
+checked:
+- https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
+- https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
+- https://github.com/meltano/hub
+- https://www.twilio.com/docs/segment/connections/destinations/catalog/delighted
+- shopify/integrations/shopify-integration-edges.yml
+- https://composio.dev/toolkits/delighted
+- https://monid.ai/tools/delighted
+- https://n8n.io/integrations/delighted/
+- https://zapier.com/apps/delighted/integrations
+summary: null
+marketplace_apps:
+- marketplace: composio
+  channel: agent-gateway
+  app: delighted
+  url: https://composio.dev/toolkits/delighted
+  identity: action-prefix
+  actions:
+  - key: DELIGHTED_ADD_PERSON_TO_AUTOPILOT_EMAIL
+  - key: DELIGHTED_ADD_PERSON_TO_AUTOPILOT_SMS
+  - key: DELIGHTED_CREATE_PERSON
+  - key: DELIGHTED_DELETE_PENDING_SURVEY_REQUESTS
+  - key: DELIGHTED_DELETE_PERSON
+  - key: DELIGHTED_GET_AUTOPILOT_EMAIL_CONFIGURATION
+  - key: DELIGHTED_GET_AUTOPILOT_SMS_CONFIGURATION
+  - key: DELIGHTED_LIST_AUTOPILOT_SMS_MEMBERSHIPS
+  - key: DELIGHTED_LIST_BOUNCED_PEOPLE
+  - key: DELIGHTED_LIST_PEOPLE
+  - key: DELIGHTED_LIST_SURVEY_RESPONSES
+  - key: DELIGHTED_LIST_UNSUBSCRIBED_PEOPLE
+  - key: DELIGHTED_UNSUBSCRIBE_PERSON
 edges:
 - partner_name: Shopify (own)
   partner: shopify
@@ -106,11 +141,4 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
-method: searched
-checked:
-- https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
-- https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
-- https://github.com/meltano/hub
-- https://www.twilio.com/docs/segment/connections/destinations/catalog/delighted
-- shopify/integrations/shopify-integration-edges.yml
-source: https://www.twilio.com/docs/segment/connections/destinations/catalog/delighted
+templates: []
