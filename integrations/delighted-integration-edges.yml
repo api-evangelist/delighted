@@ -13,6 +13,7 @@ checked:
 - https://monid.ai/tools/delighted
 - https://n8n.io/integrations/delighted/
 - https://zapier.com/apps/delighted/integrations
+- hubspot/integrations/hubspot-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: composio
@@ -35,24 +36,6 @@ marketplace_apps:
   - key: DELIGHTED_LIST_UNSUBSCRIBED_PEOPLE
   - key: DELIGHTED_UNSUBSCRIBE_PERSON
 edges:
-- partner_name: Shopify (own)
-  partner: shopify
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://apps.shopify.com/delighted
-  mirror_of: shopify/integrations/shopify-integration-edges.yml
-  apps:
-  - Delighted Post‑Delivery Survey
-  listing_count: 1
-  detected: '2026-10-15'
-  detected_by: mirror-platform-listings.py
-  publisher_verified:
-  - Built for Shopify
 - partner_name: Twilio Segment
   partner: segment
   partner_match: aggregator
@@ -141,4 +124,39 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Shopify (own)
+  partner: shopify
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://apps.shopify.com/delighted
+  mirror_of: shopify/integrations/shopify-integration-edges.yml
+  apps:
+  - Delighted Post‑Delivery Survey
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  publisher_verified:
+  - Built for Shopify
+- partner_name: HubSpot (own)
+  partner: hubspot
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://ecosystem.hubspot.com/marketplace/listing/delighted-35729
+  mirror_of: hubspot/integrations/hubspot-integration-edges.yml
+  apps:
+  - Delighted
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: SURVEYS
 templates: []
