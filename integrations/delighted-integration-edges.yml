@@ -14,6 +14,7 @@ checked:
 - https://n8n.io/integrations/delighted/
 - https://zapier.com/apps/delighted/integrations
 - hubspot/integrations/hubspot-integration-edges.yml
+- intercom/integrations/intercom-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: composio
@@ -159,4 +160,21 @@ edges:
   detected: '2026-10-21'
   detected_by: mirror-platform-listings.py
   category: SURVEYS
+- partner_name: Intercom (own)
+  partner: intercom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.intercom.com/app-store/?app_package_code=delighted-inc
+  mirror_of: intercom/integrations/intercom-integration-edges.yml
+  apps:
+  - Delighted Inc.
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Surveys & Feedback
 templates: []
