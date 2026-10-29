@@ -64,23 +64,161 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Delighted is an NPS and customer satisfaction survey platform with a REST API for managing surveys, collecting responses, segmenting results, and accessing trend data for CSAT, NPS, and CES. The API supports sending surveys to people, listing and adding survey responses, managing Autopilot configurations, retrieving metrics, handling webhooks, and managing people records including unsubscribes and bounces.
+Delighted is an NPS and customer satisfaction survey platform with a REST API for managing surveys, collecting responses, segmenting results, and accessing trend data for CSAT, NPS, and CES. The API supports sending surveys to people, listing and adding survey responses, managing Autopilot configurations, retrieving metrics, handling webhooks, and managing unsubscribes and people records. Authentication is via HTTP Basic Auth using per-project API keys.
 
-**API Documentation:** https://app.delighted.com/docs/api
+**Areas:** NPS · CSAT · Customer Satisfaction · CES · Customer Effort Score · Surveys · Customer Experience · Feedback · eNPS
 
-**Website:** https://delighted.com/
+## Delighted on APIs.io
 
-**GitHub:** https://github.com/delighted
+Everything profiled for Delighted is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/delighted/](https://apis.io/providers/delighted/)** — or go straight to one of the APIs or properties below.
 
-## APIs.json
+### APIs (6)
 
-This repository contains an [APIs.json](apis.yml) index file cataloging the Delighted API and associated resources including plans, rate limits, and FinOps guidance.
+- [Delighted Autopilot API](https://apis.io/apis/delighted/delighted-autopilot-api/) — Manage Autopilot drip campaign configuration and membership
+- [Delighted Bounces API](https://apis.io/apis/delighted/delighted-bounces-api/) — Retrieve bounced email records
+- [Delighted Metrics API](https://apis.io/apis/delighted/delighted-metrics-api/) — Retrieve NPS and satisfaction metrics
+- [Delighted People API](https://apis.io/apis/delighted/delighted-people-api/) — Manage people records for survey targeting
+- [Delighted Survey Responses API](https://apis.io/apis/delighted/delighted-survey-responses-api/) — Create and retrieve survey responses
+- [Delighted Unsubscribes API](https://apis.io/apis/delighted/delighted-unsubscribes-api/) — Manage unsubscribe lists
 
-- [APIs.json Index](apis.yml)
-- [Plans and Pricing](plans/delighted-plans-pricing.yml)
-- [Rate Limits](rate-limits/delighted-rate-limits.yml)
-- [FinOps](finops/delighted-finops.yml)
+### Published properties
 
-## Maintainers
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-**Kin Lane** — kin@apievangelist.com
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Delighted Agentic Access](https://apis.io/agentic-access/delighted/delighted-agentic-access/)
+
+#### JSON Schema (3)
+
+The data models the API reads and writes.
+
+- [Metrics](https://apis.io/schemas/delighted/metrics/)
+- [Person](https://apis.io/schemas/delighted/person/)
+- [SurveyResponse](https://apis.io/schemas/delighted/survey-response/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Delighted Context](https://apis.io/jsonld/delighted/delighted-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Delighted API Vocabulary](https://apis.io/vocabularies/delighted/delighted-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Get Metrics](https://apis.io/examples/delighted/get-metrics/)
+- [List Survey Responses](https://apis.io/examples/delighted/list-survey-responses/)
+- [Send To Person](https://apis.io/examples/delighted/send-to-person/)
+
+#### Collections (6)
+
+Postman and Open Collection request collections.
+
+- [Delighted Autopilot API](https://apis.io/collections/delighted/open-delighted-autopilot-api/)
+- [Delighted Autopilot Bounces API](https://apis.io/collections/delighted/open-delighted-bounces-api/)
+- [Delighted Autopilot Metrics API](https://apis.io/collections/delighted/open-delighted-metrics-api/)
+- [Delighted Autopilot People API](https://apis.io/collections/delighted/open-delighted-people-api/)
+- [Delighted Autopilot Survey Responses API](https://apis.io/collections/delighted/open-delighted-survey-responses-api/)
+- [Delighted Autopilot Unsubscribes API](https://apis.io/collections/delighted/open-delighted-unsubscribes-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Delighted — jsonschema rules](https://apis.io/rules/delighted/delighted-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Delighted Authentication](https://apis.io/security/delighted/delighted-authentication/)
+- [Delighted Domain Security](https://apis.io/security/delighted/delighted-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Delighted Plans Pricing](https://apis.io/plans/delighted/delighted-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Delighted Rate Limits](https://apis.io/rate-limits/delighted/delighted-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Delighted Finops](https://apis.io/finops/delighted/delighted-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://delighted.com/)
+- [Documentation](https://app.delighted.com/docs/api)
+- [Pricing](https://delighted.com/pricing)
+- [Blog](https://delighted.com/blog)
+
+## API Evangelist rating
+
+**Kin Score 24.5** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 55.2 |
+| Contract governance | 9.8 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 7.9 |
+
+**Agent readiness 26.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | verified |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/delighted/](https://apis.io/providers/delighted/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Delighted: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/delighted/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
